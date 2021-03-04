@@ -59,7 +59,11 @@
         flex-direction: column;
     }
 
+    .applicant-resume__column{
+        width: 100%;
+    }
+
     .applicant-resume__row {
-        justify-content: left;
+        justify-content: space-between;
     }
 }
