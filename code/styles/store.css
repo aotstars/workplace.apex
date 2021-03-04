@@ -1,0 +1,24 @@
+.applicant-review{
+    display: flex;
+    flex-direction: row;
+}
+
+.applicant-review__form{
+    width: 30%;
+    margin-right: 1em;
+}
+
+.applicant-review__resume{
+    width: 70%;
+}
+
+
+@media only screen and (max-width: 768px) {
+    .applicant-review{
+        flex-direction: column;
+    }
+
+    .applicant-review__form, .applicant-review__resume{
+        width: 100%;
+    }
+}
