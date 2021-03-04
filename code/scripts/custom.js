@@ -1,3 +1,5 @@
+import App from './app/index.js';
+
 $(window).on('load',function(){
     $('.menu').css('display','block');
     $('#preloader').addClass('preloader-hide');
@@ -22,8 +24,11 @@ $(document).ready(function(){
     //ADD YOUR CUSTOM JAVASCRIPT CODES HERE! 
     //Do not put inside HTML files.
     //The init_template() function will be triggered when pages open.
-	function init_template(){        
-        
+	function init_template(){
+        const path = window.location.pathname.replace('code/', '').replace('/', '').replace('.html','');
+        App(path);
+
+
         //Disable Page Jump on Empty Links.
         $('a').on('click', function(){var attrs = $(this).attr('href'); if(attrs === '#'){return false;}});
         

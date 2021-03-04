@@ -7,6 +7,7 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="viewport"
         content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover" />
+    <link rel="stylesheet" type="text/css" href="scripts/datatable/datatables.min.css">
     <title>AppKit Mobile</title>
     <link rel="stylesheet" type="text/css" href="styles/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="styles/style.css">
@@ -15,6 +16,7 @@
     <link rel="stylesheet" type="text/css" href="fonts/css/fontawesome-all.min.css">
     <link rel="manifest" href="_manifest.json" data-pwa-version="set_in_manifest_and_pwa_js">
     <link rel="apple-touch-icon" sizes="180x180" href="app/icons/icon-192x192.png">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.css">
 </head>
 
 <body class="theme-light">
@@ -57,133 +59,45 @@
         </div>
         <div class="page-title-clear"></div>
 
-        <div class="page-content">
+        <div class="page-content content">
 
 
 
-            <div class="card card-style">
-                <div class="content mb-2">
-                    <h4>Light Colorful Values</h4>
-                    <p>
-                        Light table with colorful values and FontAwesome Icons.
-                    </p>
-                    <table class="table table-borderless text-center rounded-sm shadow-l" style="overflow: hidden;">
-                        <thead>
-                            <tr class="bg-blue-dark">
-                                <th scope="col" class="color-white">Brand</th>
-                                <th scope="col" class="color-white">Device</th>
-                                <th scope="col" class="color-white">Status</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <th scope="row">Apple</th>
-                                <td class="color-green-dark">$500</td>
-                                <td><i class="fa fa-arrow-up rotate-45 color-green-dark"></i></td>
-                            </tr>
-                            <tr>
-                                <th scope="row">Android</th>
-                                <td class="color-yellow-dark">$400</td>
-                                <td><i class="fa fa-arrow-right rotate-45 color-yellow-dark"></i></td>
-                            </tr>
-                            <tr>
-                                <th scope="row">Nope</th>
-                                <td class="color-red-dark">$300</td>
-                                <td><i class="fa fa-arrow-right rotate-90 color-red-dark"></i></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-
-
-            <div class="card card-style">
-                <div class="content mb-2">
-                    <h4>Full Color Table</h4>
-                    <p>
-                        Match the page color scheme.
-                    </p>
-                    <table id="table_id" class="display">
-                        <thead>
-                            <tr>
-                                <th>Column 1</th>
-                                <th>Column 2</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Row 1 Data 1</td>
-                                <td>Row 1 Data 2</td>
-                            </tr>
-                            <tr>
-                                <td>Row 2 Data 1</td>
-                                <td>Row 2 Data 2</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-
-            <div class="card card-style">
-                <div class="content mb-2">
-                    <h4>Dark Table</h4>
-                    <p>
-                        Dark tables are always gorgeous.
-                    </p>
-                    <table class="table table-borderless text-center rounded-sm shadow-l" style="overflow: hidden;">
-                        <thead>
-                            <tr>
-                                <th scope="col" class="bg-dark-dark color-white">Brand</th>
-                                <th scope="col" class="bg-dark-dark color-white">Device</th>
-                                <th scope="col" class="bg-dark-dark color-white">OS</th>
-                                <th scope="col" class="bg-dark-dark color-white">Works</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr class="bg-dark-light">
-                                <th scope="row">Apple</th>
-                                <td>iPhone</td>
-                                <td>iOS</td>
-                                <td>Yes</td>
-                            </tr>
-                            <tr class="bg-dark-light">
-                                <th scope="row">Android</th>
-                                <td>Pixel</td>
-                                <td>Android</td>
-                                <td>Yes</td>
-                            </tr>
-                            <tr class="bg-dark-light">
-                                <th scope="row">Nope</th>
-                                <td>Nope</td>
-                                <td>nOS</td>
-                                <td>Yees</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-
-            <div data-menu-load="menu-footer.html"></div>
+            <table  id = 'test' class="table table-borderless text-center rounded-sm shadow-l" style="overflow: hidden; font-family: 'Inter';">
+                <thead>
+                    <tr class="">
+                        <th scope="col" class="color-black">Reference ID</th>
+                        <th scope="col" class="color-black">Name</th>
+                        <th scope="col" class="color-black">Position Applying</th>
+                        <th scope="col" class="color-black">Store Deployment</th>
+                        <th scope="col" class="color-black">Date Applied</th>
+                        <th scope="col" class="color-black">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">ERYL87FB5</th>
+                        <td class="color-green-dark">Eryll Jan Cabigting</td>
+                        <td>Service Crew</td>
+                        <td>Jolibee Shell Marcos</td>
+                        <td>2020-11-20 12:17:18</td>
+                        <td><button class = 'btn btn-primary font-11'>Asses Application</button></td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
         <!-- Page content ends here-->
 
         <!-- Main Menu-->
-        <div id="menu-main" class="menu menu-box-left rounded-0" data-menu-load="menu-main.html" data-menu-width="280"
-            data-menu-active="nav-components"></div>
-
-        <!-- Share Menu-->
-        <div id="menu-share" class="menu menu-box-bottom rounded-m" data-menu-load="menu-share.html"
-            data-menu-height="370"></div>
-
-        <!-- Colors Menu-->
-        <div id="menu-colors" class="menu menu-box-bottom rounded-m" data-menu-load="menu-colors.html"
-            data-menu-height="480"></div>
 
 
     </div>
 
-    <script type="text/javascript" src="scripts/datatable/datatables.min.js"></script>
     <script type="text/javascript" src="scripts/jquery.js"></script>
     <script type="text/javascript" src="scripts/bootstrap.min.js"></script>
-    <script type="text/javascript" src="scripts/custom.js"></script>
+    <script type="module" src="scripts/custom.js"></script>
+
+    <script type="text/javascript" charset="utf8"
+        src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.js"></script>
+
 </body>
