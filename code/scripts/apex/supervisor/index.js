@@ -36,7 +36,6 @@ function setupDashbord(data) {
         }
       }
       let name = `${d.person_fname} ${d.person_mname} ${d.person_lname}`;
-      console.log(name);
       content += `<tr>
         <th scope="row">${v.reference_id}</th>
         <td class="color-green-dark">${name}</td>
@@ -48,7 +47,11 @@ function setupDashbord(data) {
         )}</td>
         <td><a href="index-review.html?id=${v.id}&company=${
         v.company
-      }" class="btn btn-primary font-11">Asses Application</a></td>
+      }" class="btn btn-primary font-11">${
+        parseInt(v.review_status) == 1
+          ? "View Application"
+          : "Review Application"
+      }</a></td>
     </tr>`;
     });
 
