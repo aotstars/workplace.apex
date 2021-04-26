@@ -8,7 +8,6 @@ async function getApplicants() {
   let _company = localStorage.getItem("company");
   try {
     const response = await get(`${get_applicants_url}/${_id}/${_company}`);
-    console.log(response);
     if (response.status === 200) {
       localStorage.setItem("status", response.data[0].status);
       await setupDashbord(response.data);

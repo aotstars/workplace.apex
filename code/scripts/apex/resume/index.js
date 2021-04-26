@@ -522,7 +522,6 @@ function setupReviews(d) {
     $("#inpt-assess_ts_name").text(storeData.assess_ts_name);
     $("#inpt-assess_store_station").text(storeData.assess_store_station);
     $("#inpt-assess_reviewed_by").text(storeData.assess_reviewed_by);
-    console.log(status);
     $("#inpt-assess_evaluation").text(status);
     $("#inpt-asseess_remarks").text(storeData.asseess_remarks);
     $("#inpt-assess_name_confirmation").text(
@@ -549,11 +548,9 @@ async function reviewApplicant() {
 
   try {
     const response = await post(`${post_applicant_store_eval_url}`, d);
-    console.log(response);
-    // if (response.status === 200) {
-    //   window.open(l, "_blank");
-    //   location.reload();
-    // }
+    if (response.status === 200) {
+      location.reload();
+    }
   } catch (err) {
     console.log(err);
   }
