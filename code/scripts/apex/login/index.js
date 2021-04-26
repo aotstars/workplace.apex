@@ -16,7 +16,6 @@ function signin() {
       password: $("#form__signin-password").val(),
     }),
     function (response) {
-      console.log(response);
       if (response.status === 200) {
         localStorage.setItem("jwt", JSON.stringify(response.data));
         localStorage.setItem("token", response.data.token);

@@ -6,6 +6,7 @@ export const logout_url = "/auth/sign-out";
 export const get_applicants_url = "/internal/stores/ts";
 export const get_applicant_jobs_url = "/internal/system/jobs";
 export const get_applicant_specific_url = "/internal/record/specific";
+export const get_stores_url = "/internal/stores/";
 export const get_applicant_specific_review_url =
   "/internal/record/ts/specific/reviews";
 export const get_applicant_review_documents_url =

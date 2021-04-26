@@ -3,12 +3,27 @@ import {
   get_applicant_specific_url,
   get_applicant_specific_review_url,
   post_applicant_store_eval_url,
+  get_stores_url,
 } from "../env.js";
 
 var url = new URL(window.location.href);
 let _id = url.searchParams.get("id");
 let _company = url.searchParams.get("company");
 let store_id = localStorage.getItem("uid");
+
+async function getStoreLists() {
+  $("#preloader").removeClass("preloader-hide");
+
+  try {
+    const response = await get(`${get_stores_url}/${_company}`);
+    if (response.status === 200) {
+      await setupDropdown(response.data);
+    }
+  } catch (err) {
+    console.log(err);
+  }
+  $("#preloader").addClass("preloader-hide");
+}
 
 async function getApplicantDetails() {
   $("#preloader").removeClass("preloader-hide");
@@ -514,6 +529,7 @@ function jQFormSerializeArrToJson(formSerializeArr) {
 
 function setupReviews(d) {
   const store = d[0].store_assess;
+  const recruitment = d[0].recruitment;
   if (store.length > 0) {
     var form = $("#store_review__form");
     let storeData = JSON.parse(store);
@@ -533,6 +549,148 @@ function setupReviews(d) {
       .addClass("input-style-1-active");
     form.find("input,select,textarea").attr("disabled", true);
     form.find("button").remove();
+  }
+
+  if (recruitment.length > 0) {
+    var form = $("#form-assessment");
+    let recruitmentData = JSON.parse(recruitment);
+    let status =
+      parseInt(recruitmentData.assess_evaluation) === 1 ? "Passed" : "Failed";
+
+    console.log(status);
+    console.log(recruitmentData);
+    $("input[name='assess_date']").val(recruitmentData.assess_date);
+    $("input[name='assess_raw_score']").val(recruitmentData.assess_raw_score);
+    $("input[name='assess_percentage']").val(recruitmentData.assess_percentage);
+    $("select[name='assess_occ_test']").val(recruitmentData.assess_occ_test);
+    $("input[name='assess_personality_test']").val(
+      recruitmentData.assess_personality_test
+    );
+    $("select[name='assess_evaluation']").val(
+      recruitmentData.assess_evaluation
+    );
+    $("input[name='asseess_remarks']").val(recruitmentData.asseess_remarks);
+    $("input[name='assess_deployment_store']").val(
+      recruitmentData.assess_deployment_store
+    );
+    $("select[name='assess_pleasing']").val(recruitmentData.assess_pleasing);
+    $("select[name='assess_groom']").val(recruitmentData.assess_groom);
+    $("select[name='assess_body']").val(recruitmentData.assess_body);
+    $("select[name='assess_eye']").val(recruitmentData.assess_eye);
+    $("select[name='assess_assertive']").val(recruitmentData.assess_assertive);
+    $("select[name='assess_natural']").val(recruitmentData.assess_natural);
+    $("select[name='assess_cooperative']").val(
+      recruitmentData.assess_cooperative
+    );
+    $("select[name='assess_responsible']").val(
+      recruitmentData.assess_responsible
+    );
+    $("select[name='assess_self_motivated']").val(
+      recruitmentData.assess_self_motivated
+    );
+    $("select[name='assess_patience']").val(recruitmentData.assess_patience);
+    $("select[name='assess_dedicated']").val(recruitmentData.assess_dedicated);
+    $("select[name='assess_success_oriented']").val(
+      recruitmentData.assess_success_oriented
+    );
+    $("select[name='assess_quick_learner']").val(
+      recruitmentData.assess_quick_learner
+    );
+    $("select[name='assess_hard_working']").val(
+      recruitmentData.assess_hard_working
+    );
+    $("select[name='assess_intelligent']").val(
+      recruitmentData.assess_intelligent
+    );
+    $("select[name='assess_self_confident']").val(
+      recruitmentData.assess_self_confident
+    );
+    $("select[name='assess_educ_training']").val(
+      recruitmentData.assess_educ_training
+    );
+    $("select[name='assess_sales_exp']").val(recruitmentData.assess_sales_exp);
+    $("select[name='assess_qualification_serv_crew_exp']").val(
+      recruitmentData.assess_qualification_serv_crew_exp
+    );
+    $("select[name='assess_cash_exp']").val(recruitmentData.assess_cash_exp);
+    $("select[name='assess_comm_skill']").val(
+      recruitmentData.assess_comm_skill
+    );
+    $("select[name='assess_creativity']").val(
+      recruitmentData.assess_creativity
+    );
+    $("select[name='assess_logic']").val(recruitmentData.assess_logic);
+    $("select[name='assess_serv_crew_exp']").val(
+      recruitmentData.assess_serv_crew_exp
+    );
+    $("select[name='assess_commitment']").val(
+      recruitmentData.assess_commitment
+    );
+    $("select[name='assess_know_org']").val(recruitmentData.assess_know_org);
+    $("select[name='assess_know_ind']").val(recruitmentData.assess_know_ind);
+    $("select[name='assess_realistic']").val(recruitmentData.assess_realistic);
+    $("select[name='assess_match_needs']").val(
+      recruitmentData.assess_match_needs
+    );
+    $("select[name='assess_nervous']").val(recruitmentData.assess_nervous);
+    $("select[name='assess_debater']").val(recruitmentData.assess_debater);
+    $("select[name='assess_out_of_way']").val(
+      recruitmentData.assess_out_of_way
+    );
+    $("select[name='assess_sensitive_criticism']").val(
+      recruitmentData.assess_sensitive_criticism
+    );
+    $("input[name='assess_bi_date']").val(recruitmentData.assess_bi_date);
+    $("input[name='assess_bi_pos_held']").val(
+      recruitmentData.assess_bi_pos_held
+    );
+    $("input[name='assess_bi_company']").val(recruitmentData.assess_bi_company);
+    $("input[name='assess_bi_contact_pers']").val(
+      recruitmentData.assess_bi_contact_pers
+    );
+    $("input[name='assess_bi_contact_pers_pos']").val(
+      recruitmentData.assess_bi_contact_pers_pos
+    );
+    $("input[name='assess_bi_contact_pers_no']").val(
+      recruitmentData.assess_bi_contact_pers_no
+    );
+    $("input[name='assess_bi_appnt_startD']").val(
+      recruitmentData.assess_bi_appnt_startD
+    );
+    $("input[name='assess_bi_appnt_to']").val(
+      recruitmentData.assess_bi_appnt_to
+    );
+    $("select[name='assess_bi_perfm']").val(recruitmentData.assess_bi_perfm);
+    $("input[name='assess_bi_rel_peers']").val(
+      recruitmentData.assess_bi_rel_peers
+    );
+    $("input[name='assess_bi_rel_superiors']").val(
+      recruitmentData.assess_bi_rel_superiors
+    );
+    $("input[name='assess_bi_violations_derogatory']").val(
+      recruitmentData.assess_bi_violations_derogatory
+    );
+    $("input[name='assess_bi_rol']").val(recruitmentData.assess_bi_rol);
+    $("input[name='assess_bi_add_training']").val(
+      recruitmentData.assess_bi_add_training
+    );
+    $("input[name='assess_bi_recommended']").val(
+      recruitmentData.assess_bi_recommended
+    );
+  }
+}
+
+function setupDropdown(d) {
+  if (d) {
+    var container = $("#deployment_store");
+    var content = "";
+    console.log(d);
+    $.each(d, function (k, v) {
+      console.log(v);
+      content += `<option value='${v.id}'>${v.name}</option>`;
+    });
+
+    container.append(content);
   }
 }
 
@@ -557,6 +715,7 @@ async function reviewApplicant() {
 }
 
 export async function init_resume() {
+  await getStoreLists();
   await getApplicantDetails();
   $("#store_review__form")
     .off()

@@ -65,72 +65,872 @@
                                 </button>
                                 <div id="collapse2" class="collapse mb-2" data-parent="#applicant-review-form">
                                     <div class="py-2 pl-3 pr-3">
-                                        Dear beloved client, thank you for your continued partnership with us, we
-                                        appreciate your feedback on the crew members. Have a Sparkling Day.
+                                        <form action="" id="form-assessment">
+                                            <hr>
+                                            <div class="row mt-4">
+                                                <div class="col-md-12 text-left text-black">
+                                                    <h4 class="mb-1"><strong>Application Assessment</strong></h4>
+                                                </div>
+                                            </div>
+                                            <div class="row mt-2">
+                                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                    <div class="form-group"> <label class="control-label"> Date </label>
+                                                        <input class="form-control" type="date" name="assess_date"
+                                                            required="" disabled="true">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <hr>
+                                            <div class="row mt-4">
+                                                <div class="col-md-12 text-left text-black">
+                                                    <h4 class="mb-1"><strong>Exam Result</strong></h4>
+                                                </div>
+                                            </div>
+                                            <br>
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <h6 class="mb-1">Test I: Intelligence Quotience Test</h6>
+                                                </div>
+                                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                    <div class="form-group"> <label class="control-label"> Raw Score
+                                                        </label> <input class="form-control" type="text"
+                                                            name="assess_raw_score" required="" disabled="true"> </div>
+                                                </div>
+                                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                    <div class="form-group"> <label class="control-label"> Percentage
+                                                        </label> <input class="form-control" type="text"
+                                                            name="assess_percentage" required="" disabled="true"> </div>
+                                                </div>
+                                            </div>
+                                            <br>
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <h6 class="mb-1">Test II: Occupational Test</h6>
+                                                </div>
+                                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                    <div class="form-group">
+                                                        <label class="control-label"> Result </label>
+                                                        <select name="assess_occ_test" class="form-control" required=""
+                                                            disabled="true">
+                                                            <option value="" selected="" disabled="true">- Rate -
+                                                            </option>
+                                                            <option value="0" selected="">Passed</option>
+                                                            <option value="1">Failed</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <br>
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <h6 class="mb-1">Test III: Personality Test</h6>
+                                                </div>
+                                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                    <div class="form-group">
+                                                        <label class="control-label"> Result </label>
+                                                        <select name="assess_personality_test" class="form-control"
+                                                            required="" disabled="true">
+                                                            <option value="" selected="" disabled="true">- Rate -
+                                                            </option>
+                                                            <option value="0" selected="">Passed</option>
+                                                            <option value="1">Failed</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <hr>
+                                            <div class="row mt-4">
+                                                <div class="col-md-12 text-left text-black">
+                                                    <h4 class="mb-1"><strong>Overall</strong></h4>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <h6 class="mb-1">Evaluation</h6>
+                                                </div>
+                                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                    <div class="form-group">
+                                                        <label class="control-label"> Result </label>
+                                                        <select name="assess_evaluation" id="resultEVREC"
+                                                            class="form-control" required="" disabled="true">
+                                                            <option value="" selected="" disabled="true">- Rate -
+                                                            </option>
+                                                            <option value="1" selected="">Passed</option>
+                                                            <option value="2">Failed</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 "
+                                                    id="recommendationGroup">
+                                                    <div
+                                                        class="form-group d-flex justify-content-start align-items-center">
+                                                        <label class="control-label mb-0 w-100"
+                                                            style="margin-left: .5rem;display: flex;align-items:center;">
+                                                            <input type="checkbox" name="assess_front"
+                                                                class="form-control inline-chkbox"
+                                                                style="width:5%;margin-right: .5rem" disabled="true">
+                                                            Highly recommended in front of the
+                                                            house (cashier, dining, QC)</label>
+                                                    </div>
+                                                    <div
+                                                        class="form-group d-flex justify-content-start align-items-center">
+                                                        <label class="control-label mb-0 w-100"
+                                                            style="margin-left: .5rem;display: flex;align-items:center;">
+                                                            <input type="checkbox" name="assess_back"
+                                                                class="form-control inline-chkbox"
+                                                                style="width:5%; margin-right: .5rem" disabled="true">
+                                                            Highly recommended in back of the house
+                                                            (kitchen, grill) </label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                    <div class="form-group"> <label
+                                                            class="control-label">Remarks</label> <textarea
+                                                            class="form-control" name="asseess_remarks" rows="10"
+                                                            columns="30" required="required"
+                                                            disabled="true"> Test </textarea> </div>
+                                                </div>
+                                            </div>
+                                            <div id="assessment-fields">
+                                                <hr>
+                                                <div class="row">
+                                                    <div class="col-lg-12 col-md-4 col-sm-12 col-xs-12">
+                                                        <div class="form-group">
+                                                            <label class="control-label"> Possible Deployment Store
+                                                            </label>
+                                                            <select class="form-control" name="assess_deployment_store"
+                                                                id="deployment_store" disabled="true">
+
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <hr>
+                                                <div class="row mt-4">
+                                                    <div class="col-md-12 text-left text-black">
+                                                        <h4 class="mb-1"><strong>Appearance</strong></h4>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                        <div class="form-group">
+                                                            <label class="control-label"> Pleasing Personality </label>
+                                                            <select name="assess_pleasing" class="form-control"
+                                                                required="" disabled="true">
+                                                                <option value="" disabled="true">- Rate -</option>
+                                                                <option value="1" selected="">1</option>
+                                                                <option value="2">2</option>
+                                                                <option value="3">3</option>
+                                                                <option value="4">4</option>
+                                                                <option value="5">5</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                        <div class="form-group">
+                                                            <label class="control-label"> Grooming and Clothing </label>
+                                                            <select name="assess_groom" class="form-control" required=""
+                                                                disabled="true">
+                                                                <option value="" disabled="true">- Rate -</option>
+                                                                <option value="1" selected="">1</option>
+                                                                <option value="2">2</option>
+                                                                <option value="3">3</option>
+                                                                <option value="4">4</option>
+                                                                <option value="5">5</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                        <div class="form-group">
+                                                            <label class="control-label"> Body Language </label>
+                                                            <select name="assess_body" class="form-control" required=""
+                                                                disabled="true">
+                                                                <option value="" disabled="true">- Rate -</option>
+                                                                <option value="1" selected="">1</option>
+                                                                <option value="2">2</option>
+                                                                <option value="3">3</option>
+                                                                <option value="4">4</option>
+                                                                <option value="5">5</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                        <div class="form-group">
+                                                            <label class="control-label"> Eye Contact </label>
+                                                            <select name="assess_eye" class="form-control" required=""
+                                                                disabled="true">
+                                                                <option value="" disabled="true">- Rate -</option>
+                                                                <option value="1" selected="">1</option>
+                                                                <option value="2">2</option>
+                                                                <option value="3">3</option>
+                                                                <option value="4">4</option>
+                                                                <option value="5">5</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <hr>
+                                                <div class="row mt-4">
+                                                    <div class="col-md-12 text-left text-black">
+                                                        <h4 class="mb-1"><strong>Characteristics</strong></h4>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                        <div class="form-group">
+                                                            <label class="control-label"> Assertive </label>
+                                                            <select name="assess_assertive" class="form-control"
+                                                                required="" disabled="true">
+                                                                <option value="" disabled="true">- Rate -</option>
+                                                                <option value="1" selected="">1</option>
+                                                                <option value="2">2</option>
+                                                                <option value="3">3</option>
+                                                                <option value="4">4</option>
+                                                                <option value="5">5</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                        <div class="form-group">
+                                                            <label class="control-label"> Natural Leader </label>
+                                                            <select name="assess_natural" class="form-control"
+                                                                required="" disabled="true">
+                                                                <option value="" disabled="true">- Rate -</option>
+                                                                <option value="1" selected="">1</option>
+                                                                <option value="2">2</option>
+                                                                <option value="3">3</option>
+                                                                <option value="4">4</option>
+                                                                <option value="5">5</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                        <div class="form-group">
+                                                            <label class="control-label"> Cooperative </label>
+                                                            <select name="assess_cooperative" class="form-control"
+                                                                required="" disabled="true">
+                                                                <option value="" disabled="true">- Rate -</option>
+                                                                <option value="1" selected="">1</option>
+                                                                <option value="2">2</option>
+                                                                <option value="3">3</option>
+                                                                <option value="4">4</option>
+                                                                <option value="5">5</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                        <div class="form-group">
+                                                            <label class="control-label"> Responsible </label>
+                                                            <select name="assess_responsible" class="form-control"
+                                                                required="" disabled="true">
+                                                                <option value="" disabled="true">- Rate -</option>
+                                                                <option value="1" selected="">1</option>
+                                                                <option value="2">2</option>
+                                                                <option value="3">3</option>
+                                                                <option value="4">4</option>
+                                                                <option value="5">5</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                        <div class="form-group">
+                                                            <label class="control-label"> Self Motivated </label>
+                                                            <select name="assess_self_motivated" class="form-control"
+                                                                required="" disabled="true">
+                                                                <option value="" disabled="true">- Rate -</option>
+                                                                <option value="1" selected="">1</option>
+                                                                <option value="2">2</option>
+                                                                <option value="3">3</option>
+                                                                <option value="4">4</option>
+                                                                <option value="5">5</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                        <div class="form-group">
+                                                            <label class="control-label"> Patience </label>
+                                                            <select name="assess_patience" class="form-control"
+                                                                required="" disabled="true">
+                                                                <option value="" disabled="true">- Rate -</option>
+                                                                <option value="1" selected="">1</option>
+                                                                <option value="2">2</option>
+                                                                <option value="3">3</option>
+                                                                <option value="4">4</option>
+                                                                <option value="5">5</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                        <div class="form-group">
+                                                            <label class="control-label"> Dedicated </label>
+                                                            <select name="assess_dedicated" class="form-control"
+                                                                required="" disabled="true">
+                                                                <option value="" disabled="true">- Rate -</option>
+                                                                <option value="1" selected="">1</option>
+                                                                <option value="2">2</option>
+                                                                <option value="3">3</option>
+                                                                <option value="4">4</option>
+                                                                <option value="5">5</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                        <div class="form-group">
+                                                            <label class="control-label"> Success Oriented </label>
+                                                            <select name="assess_success_oriented" class="form-control"
+                                                                required="" disabled="true">
+                                                                <option value="" disabled="true">- Rate -</option>
+                                                                <option value="1" selected="">1</option>
+                                                                <option value="2">2</option>
+                                                                <option value="3">3</option>
+                                                                <option value="4">4</option>
+                                                                <option value="5">5</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                        <div class="form-group">
+                                                            <label class="control-label"> Quick Learner </label>
+                                                            <select name="assess_quick_learner" class="form-control"
+                                                                required="" disabled="true">
+                                                                <option value="" disabled="true">- Rate -</option>
+                                                                <option value="1" selected="">1</option>
+                                                                <option value="2">2</option>
+                                                                <option value="3">3</option>
+                                                                <option value="4">4</option>
+                                                                <option value="5">5</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                        <div class="form-group">
+                                                            <label class="control-label"> Hard working </label>
+                                                            <select name="assess_hard_working" class="form-control"
+                                                                required="" disabled="true">
+                                                                <option value="" disabled="true">- Rate -</option>
+                                                                <option value="1" selected="">1</option>
+                                                                <option value="2">2</option>
+                                                                <option value="3">3</option>
+                                                                <option value="4">4</option>
+                                                                <option value="5">5</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                        <div class="form-group">
+                                                            <label class="control-label"> Intelligent </label>
+                                                            <select name="assess_intelligent" class="form-control"
+                                                                required="" disabled="true">
+                                                                <option value="" disabled="true">- Rate -</option>
+                                                                <option value="1" selected="">1</option>
+                                                                <option value="2">2</option>
+                                                                <option value="3">3</option>
+                                                                <option value="4">4</option>
+                                                                <option value="5">5</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                        <div class="form-group">
+                                                            <label class="control-label"> Self-Confident </label>
+                                                            <select name="assess_self_confident" class="form-control"
+                                                                required="" disabled="true">
+                                                                <option value="" disabled="true">- Rate -</option>
+                                                                <option value="1" selected="">1</option>
+                                                                <option value="2">2</option>
+                                                                <option value="3">3</option>
+                                                                <option value="4">4</option>
+                                                                <option value="5">5</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <hr>
+                                                <div class="row mt-4">
+                                                    <div class="col-md-12 text-left text-black">
+                                                        <h4 class="mb-1"><strong>Qualifications</strong></h4>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                        <div class="form-group">
+                                                            <label class="control-label"> Education / Training </label>
+                                                            <select name="assess_educ_training" class="form-control"
+                                                                required="" disabled="true">
+                                                                <option value="" disabled="true">- Rate -</option>
+                                                                <option value="1" selected="">1</option>
+                                                                <option value="2">2</option>
+                                                                <option value="3">3</option>
+                                                                <option value="4">4</option>
+                                                                <option value="5">5</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                        <div class="form-group">
+                                                            <label class="control-label"> Sales Experience </label>
+                                                            <select name="assess_sales_exp" class="form-control"
+                                                                required="" disabled="true">
+                                                                <option value="" disabled="true">- Rate -</option>
+                                                                <option value="1" selected="">1</option>
+                                                                <option value="2">2</option>
+                                                                <option value="3">3</option>
+                                                                <option value="4">4</option>
+                                                                <option value="5">5</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                        <div class="form-group">
+                                                            <label class="control-label"> Service Crew Experience
+                                                            </label>
+                                                            <select name="assess_serv_crew_exp" class="form-control"
+                                                                required="" disabled="true">
+                                                                <option value="" disabled="true">- Rate -</option>
+                                                                <option value="1" selected="">1</option>
+                                                                <option value="2">2</option>
+                                                                <option value="3">3</option>
+                                                                <option value="4">4</option>
+                                                                <option value="5">5</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                        <div class="form-group">
+                                                            <label class="control-label"> Cashier Experience </label>
+                                                            <select name="assess_cash_exp" class="form-control"
+                                                                required="" disabled="true">
+                                                                <option value="" disabled="true">- Rate -</option>
+                                                                <option value="1" selected="">1</option>
+                                                                <option value="2">2</option>
+                                                                <option value="3">3</option>
+                                                                <option value="4">4</option>
+                                                                <option value="5">5</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                        <div class="form-group">
+                                                            <label class="control-label"> Communication Skills </label>
+                                                            <select name="assess_comm_skill" class="form-control"
+                                                                required="" disabled="true">
+                                                                <option value="" disabled="true">- Rate -</option>
+                                                                <option value="1" selected="">1</option>
+                                                                <option value="2">2</option>
+                                                                <option value="3">3</option>
+                                                                <option value="4">4</option>
+                                                                <option value="5">5</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <hr>
+                                                <div class="row mt-4">
+                                                    <div class="col-md-12 text-left text-black">
+                                                        <h4 class="mb-1"><strong>Decision / Problem Solving</strong>
+                                                        </h4>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                        <div class="form-group">
+                                                            <label class="control-label"> Creativity </label>
+                                                            <select name="assess_creativity" class="form-control"
+                                                                required="" disabled="true">
+                                                                <option value="" disabled="true">- Rate -</option>
+                                                                <option value="1" selected="">1</option>
+                                                                <option value="2">2</option>
+                                                                <option value="3">3</option>
+                                                                <option value="4">4</option>
+                                                                <option value="5">5</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                        <div class="form-group">
+                                                            <label class="control-label"> Logic </label>
+                                                            <select name="assess_logic" class="form-control" required=""
+                                                                disabled="true">
+                                                                <option value="" disabled="true">- Rate -</option>
+                                                                <option value="1" selected="">1</option>
+                                                                <option value="2">2</option>
+                                                                <option value="3">3</option>
+                                                                <option value="4">4</option>
+                                                                <option value="5">5</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                        <div class="form-group">
+                                                            <label class="control-label"> Service Crew Experience
+                                                            </label>
+                                                            <select name="assess_serv_crew_exp" class="form-control"
+                                                                required="" disabled="true">
+                                                                <option value="" disabled="true">- Rate -</option>
+                                                                <option value="1" selected="">1</option>
+                                                                <option value="2">2</option>
+                                                                <option value="3">3</option>
+                                                                <option value="4">4</option>
+                                                                <option value="5">5</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <hr>
+                                                <div class="row mt-4">
+                                                    <div class="col-md-12 text-left text-black">
+                                                        <h4 class="mb-1"><strong>Reason for Selecting Particular
+                                                                Organization</strong></h4>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                        <div class="form-group">
+                                                            <label class="control-label"> Commitment </label>
+                                                            <select name="assess_commitment" class="form-control"
+                                                                required="" disabled="true">
+                                                                <option value="" disabled="true">- Rate -</option>
+                                                                <option value="1" selected="">1</option>
+                                                                <option value="2">2</option>
+                                                                <option value="3">3</option>
+                                                                <option value="4">4</option>
+                                                                <option value="5">5</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                        <div class="form-group">
+                                                            <label class="control-label"> Knowledge of Organization
+                                                            </label>
+                                                            <select name="assess_know_org" class="form-control"
+                                                                required="" disabled="true">
+                                                                <option value="" disabled="true">- Rate -</option>
+                                                                <option value="1" selected="">1</option>
+                                                                <option value="2">2</option>
+                                                                <option value="3">3</option>
+                                                                <option value="4">4</option>
+                                                                <option value="5">5</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                        <div class="form-group">
+                                                            <label class="control-label"> Knowledge of Industry </label>
+                                                            <select name="assess_know_ind" class="form-control"
+                                                                required="" disabled="true">
+                                                                <option value="" disabled="true">- Rate -</option>
+                                                                <option value="1" selected="">1</option>
+                                                                <option value="2">2</option>
+                                                                <option value="3">3</option>
+                                                                <option value="4">4</option>
+                                                                <option value="5">5</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <hr>
+                                                <div class="row mt-4">
+                                                    <div class="col-md-12 text-left text-black">
+                                                        <h4 class="mb-1"><strong>Job Expectation</strong></h4>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                        <div class="form-group">
+                                                            <label class="control-label"> Realistic </label>
+                                                            <select name="assess_realistic" class="form-control"
+                                                                required="" disabled="true">
+                                                                <option value="" disabled="true">- Rate -</option>
+                                                                <option value="1" selected="">1</option>
+                                                                <option value="2">2</option>
+                                                                <option value="3">3</option>
+                                                                <option value="4">4</option>
+                                                                <option value="5">5</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                        <div class="form-group">
+                                                            <label class="control-label"> Match Employer`s needs
+                                                            </label>
+                                                            <select name="assess_match_needs" class="form-control"
+                                                                required="" disabled="true">
+                                                                <option value="" disabled="true">- Rate -</option>
+                                                                <option value="1" selected="">1</option>
+                                                                <option value="2">2</option>
+                                                                <option value="3">3</option>
+                                                                <option value="4">4</option>
+                                                                <option value="5">5</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <hr>
+                                                <div class="row mt-4">
+                                                    <div class="col-md-12 text-left text-black">
+                                                        <h4 class="mb-1"><strong>Weakness</strong></h4>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                        <div class="form-group">
+                                                            <label class="control-label"> Getting Nervous around people
+                                                            </label>
+                                                            <select name="assess_nervous" class="form-control"
+                                                                required="" disabled="true">
+                                                                <option value="" disabled="true">- Rate -</option>
+                                                                <option value="1" selected="">1</option>
+                                                                <option value="2">2</option>
+                                                                <option value="3">3</option>
+                                                                <option value="4">4</option>
+                                                                <option value="5">5</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                        <div class="form-group">
+                                                            <label class="control-label"> Debater </label>
+                                                            <select name="assess_debater" class="form-control"
+                                                                required="" disabled="true">
+                                                                <option value="" disabled="true">- Rate -</option>
+                                                                <option value="1" selected="">1</option>
+                                                                <option value="2">2</option>
+                                                                <option value="3">3</option>
+                                                                <option value="4">4</option>
+                                                                <option value="5">5</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                        <div class="form-group">
+                                                            <label class="control-label"> Going out of one`s way
+                                                            </label>
+                                                            <select name="assess_out_of_way" class="form-control"
+                                                                required="" disabled="true">
+                                                                <option value="" disabled="true">- Rate -</option>
+                                                                <option value="1" selected="">1</option>
+                                                                <option value="2">2</option>
+                                                                <option value="3">3</option>
+                                                                <option value="4">4</option>
+                                                                <option value="5">5</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                        <div class="form-group">
+                                                            <label class="control-label"> Sensitive to Criticisms
+                                                            </label>
+                                                            <select name="assess_sensitive_criticism"
+                                                                class="form-control" required="" disabled="true">
+                                                                <option value="" disabled="true">- Rate -</option>
+                                                                <option value="1" selected="">1</option>
+                                                                <option value="2">2</option>
+                                                                <option value="3">3</option>
+                                                                <option value="4">4</option>
+                                                                <option value="5">5</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <hr>
+                                            <div class="row mt-4">
+                                                <div class="col-md-12 text-left text-black">
+                                                    <h4 class="mb-1"><strong>Background Investigation</strong></h4>
+                                                </div>
+                                            </div>
+                                            <div class="row mt-2">
+                                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                    <div class="form-group"> <label class="control-label"> Date of
+                                                            Background Check </label> <input class="form-control"
+                                                            type="date" name="assess_bi_date" required=""
+                                                            disabled="true"> </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-lg-12 col-md-6 col-sm-12 col-xs-12">
+                                                    <div class="form-group"> <label class="control-label"> Position Held
+                                                        </label> <input class="form-control" type="text"
+                                                            name="assess_bi_pos_held" required="" disabled="true">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <hr>
+                                            <div class="row">
+                                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                    <div class="form-group"> <label class="control-label"> Company Name
+                                                        </label> <input class="form-control" type="text"
+                                                            name="assess_bi_company" required="" disabled="true"> </div>
+                                                </div>
+                                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                    <div class="form-group"> <label class="control-label"> Name of
+                                                            Contact Person </label> <input class="form-control"
+                                                            type="text" name="assess_bi_contact_pers" required=""
+                                                            disabled="true"> </div>
+                                                </div>
+                                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                    <div class="form-group"> <label class="control-label"> Position
+                                                        </label> <input class="form-control" type="text"
+                                                            name="assess_bi_contact_pers_pos" required=""
+                                                            disabled="true"> </div>
+                                                </div>
+                                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                    <div class="form-group"> <label class="control-label"> Contact
+                                                            Number </label> <input class="form-control" type="number"
+                                                            name="assess_bi_contact_pers_no" required=""
+                                                            disabled="true"> </div>
+                                                </div>
+                                            </div>
+                                            <br>
+                                            <div class="col-lg-12">
+                                                <h6 class="mb-1">Date of Employment</h6>
+                                            </div>
+                                            <hr>
+                                            <div class="row">
+                                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                    <div class="form-group"> <label class="control-label"> Start Date
+                                                        </label> <input class="form-control" type="date"
+                                                            name="assess_bi_appnt_startD" required="" disabled="true">
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                    <div class="form-group"> <label class="control-label"> Until
+                                                        </label> <input class="form-control" type="date"
+                                                            name="assess_bi_appnt_to" required="" disabled="true">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                    <div class="form-group">
+                                                        <label class="control-label"> Performance </label>
+                                                        <select name="assess_bi_perfm" class="form-control" required=""
+                                                            disabled="true">
+                                                            <option value="" disabled="true">- Rate -</option>
+                                                            <option value="1">Fair</option>
+                                                            <option value="2">Average</option>
+                                                            <option value="3">Above Averarge</option>
+                                                            <option value="4" selected="">Excellent</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                    <div class="form-group"> <label class="control-label"> Relationship
+                                                            with peers </label> <input class="form-control" type="text"
+                                                            name="assess_bi_rel_peers" required="" disabled="true">
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                    <div class="form-group"> <label class="control-label"> Relationship
+                                                            with superiors </label> <input class="form-control"
+                                                            type="text" name="assess_bi_rel_superiors" required=""
+                                                            disabled="true"> </div>
+                                                </div>
+                                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                    <div class="form-group"> <label class="control-label"> Violations/
+                                                            Derogatory record </label> <input class="form-control"
+                                                            type="text" name="assess_bi_violations_derogatory"
+                                                            required="" disabled="true"> </div>
+                                                </div>
+                                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                    <div class="form-group"> <label class="control-label"> Reason for
+                                                            Leaving </label> <textarea class="form-control"
+                                                            name="assess_bi_rol" rows="10" columns="30"
+                                                            required="required" disabled="true"> N/A </textarea> </div>
+                                                </div>
+                                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                    <div class="form-group"> <label class="control-label"> Additional
+                                                            training </label> <input class="form-control" type="text"
+                                                            name="assess_bi_add_training" required="" disabled="true">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 "
+                                                id="recommendationGroup">
+                                                <div class="form-group d-flex justify-content-start align-items-center">
+                                                    <label class="control-label mb-0 w-100"
+                                                        style="margin-left: 1%;white-space: break-spaces;display: flex;align-items:center;">
+                                                        <input type="checkbox" name="assess_bi_recommended"
+                                                            class="form-control inline-chkbox" style="width:5%;"
+                                                            checked="" disabled="true"> Recommended?</label>
+                                                </div>
+                                            </div>
+                                            <div class="row"> </div>
+                                        </form>
                                     </div>
                                 </div>
                             </div>
-                            <div id="store-review">
-                                <form id="store_review__form">
-                                    <input type="hidden" name="store" value="" id="store_inpt" />
-                                    <input type="hidden" name="reviewer" id="reviewer_inpt" />
-                                    <input type="hidden" name="store" value="" id="store_inpt" />
-                                    <input type="hidden" name="company" value="" id="company_inpt" />
-                                    <input type="hidden" name="id" value="" id="applicant_inpt" />
-                                    <div class="input-style input-style-2 input-required">
-                                        <span class="color-highlight input-style-1-inactive">Name of Team
-                                            Supervisor</span>
-                                        <input class="form-control" type="text" placeholder="" value=""
-                                            name="assess_ts_name">
-                                        <span id="inpt-assess_ts_name" class="bg-grey"></span>
-                                    </div>
-                                    <div class="input-style input-style-2 input-required">
-                                        <span class="color-highlight input-style-1-inactive">Work Station</span>
-                                        <input class="form-control" type="text" placeholder=""
-                                            name="assess_store_station">
-                                        <span id="inpt-assess_store_station" class="bg-grey"></span>
-                                    </div>
-                                    <div class="input-style input-style-2 input-required">
-                                        <span class="color-highlight input-style-1-inactive">Recommended by (Manager on
-                                            Duty)</span>
-                                        <input class="form-control" type="text" value="" placeholder=""
-                                            name="assess_reviewed_by">
-                                        <span id="inpt-assess_reviewed_by" class="bg-grey"></span>
-                                    </div>
-                                    <div class="input-style input-style-2">
-                                        <span class="input-style-1-active">Result</span>
-                                        <em><i class="fa fa-angle-down"></i></em>
-                                        <select class="form-control" name="assess_evaluation" value=""
-                                            id="store_evaluation">
-                                            <option value="" selected>- Rate -</option>
-                                            <option value="1">Passed</option>
-                                            <option value="2">Failed</option>
-                                        </select>
-                                        <span id="inpt-assess_evaluation" class="bg-grey"></span>
-                                    </div>
-                                    <div class="input-style input-style-2 input-required">
-                                        <span class="input-style-1-inactive">Remarks</span>
-                                        <em>(required)</em>
-                                        <textarea class="form-control" placeholder="" value="" name="asseess_remarks"
-                                            rows="10"></textarea>
-                                        <span id="inpt-asseess_remarks" class="bg-grey"></span>
-                                    </div>
+                            <div id='store-review-form'>
+                                <button class="btn accordion-btn border-0 color-theme collapsed" data-toggle="collapse"
+                                    data-target="#collapse3" aria-expanded="false" style="width: 100%">
+                                    <i class="fa fa-star color-yellow-dark mr-2"></i>
+                                    Store Review
+                                    <i class="fa fa-chevron-down font-10 accordion-icon"></i>
+                                </button>
+                                <div id="collapse3" class="collapse mb-2" data-parent="#store-review-form">
+                                    <div class="py-2 pl-3 pr-3">
+                                        <form id="store_review__form">
+                                            <input type="hidden" name="store" value="" id="store_inpt" />
+                                            <input type="hidden" name="reviewer" id="reviewer_inpt" />
+                                            <input type="hidden" name="store" value="" id="store_inpt" />
+                                            <input type="hidden" name="company" value="" id="company_inpt" />
+                                            <input type="hidden" name="id" value="" id="applicant_inpt" />
+                                            <div class="input-style input-style-2 input-required">
+                                                <span class="color-highlight input-style-1-inactive">Name of Team
+                                                    Supervisor</span>
+                                                <input class="form-control" type="text" placeholder="" value=""
+                                                    name="assess_ts_name">
+                                                <span id="inpt-assess_ts_name" class="bg-grey"></span>
+                                            </div>
+                                            <div class="input-style input-style-2 input-required">
+                                                <span class="color-highlight input-style-1-inactive">Work Station</span>
+                                                <input class="form-control" type="text" placeholder=""
+                                                    name="assess_store_station">
+                                                <span id="inpt-assess_store_station" class="bg-grey"></span>
+                                            </div>
+                                            <div class="input-style input-style-2 input-required">
+                                                <span class="color-highlight input-style-1-inactive">Recommended by
+                                                    (Manager
+                                                    on
+                                                    Duty)</span>
+                                                <input class="form-control" type="text" value="" placeholder=""
+                                                    name="assess_reviewed_by">
+                                                <span id="inpt-assess_reviewed_by" class="bg-grey"></span>
+                                            </div>
+                                            <div class="input-style input-style-2">
+                                                <span class="input-style-1-active">Result</span>
+                                                <em><i class="fa fa-angle-down"></i></em>
+                                                <select class="form-control" name="assess_evaluation" value=""
+                                                    id="store_evaluation">
+                                                    <option value="" selected>- Rate -</option>
+                                                    <option value="1">Passed</option>
+                                                    <option value="2">Failed</option>
+                                                </select>
+                                                <span id="inpt-assess_evaluation" class="bg-grey"></span>
+                                            </div>
+                                            <div class="input-style input-style-2 input-required">
+                                                <span class="input-style-1-inactive">Remarks</span>
+                                                <em>(required)</em>
+                                                <textarea class="form-control" placeholder="" value=""
+                                                    name="asseess_remarks" rows="10"></textarea>
+                                                <span id="inpt-asseess_remarks" class="bg-grey"></span>
+                                            </div>
 
-                                    <div class="input-style input-style-2 input-required">
-                                        <span class="input-style-1-inactive">Please type your name for
-                                            confirmation</span>
-                                        <em>(required)</em>
-                                        <input type='text' class="form-control" value="" placeholder=""
-                                            name="assess_name_confirmation" />
-                                        <span id="inpt-assess_name_confirmation" class="bg-grey"></span>
+                                            <div class="input-style input-style-2 input-required">
+                                                <span class="input-style-1-inactive">Please type your name for
+                                                    confirmation</span>
+                                                <em>(required)</em>
+                                                <input type='text' class="form-control" value="" placeholder=""
+                                                    name="assess_name_confirmation" />
+                                                <span id="inpt-assess_name_confirmation" class="bg-grey"></span>
+                                            </div>
+                                            <button type="submit" id="submit__btn"
+                                                class="btn btn-full font-13 gradient-blue w-100" disabled>Submit
+                                                Assessment</button>
+
+                                        </form>
                                     </div>
-                                    <button type="submit" id="submit__btn"
-                                        class="btn btn-full font-13 gradient-blue w-100" disabled>Submit
-                                        Assessment</button>
-
-                                </form>
-
-
+                                </div>
                             </div>
 
 
