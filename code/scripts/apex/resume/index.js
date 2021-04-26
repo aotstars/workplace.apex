@@ -557,8 +557,6 @@ function setupReviews(d) {
     let status =
       parseInt(recruitmentData.assess_evaluation) === 1 ? "Passed" : "Failed";
 
-    console.log(status);
-    console.log(recruitmentData);
     $("input[name='assess_date']").val(recruitmentData.assess_date);
     $("input[name='assess_raw_score']").val(recruitmentData.assess_raw_score);
     $("input[name='assess_percentage']").val(recruitmentData.assess_percentage);
@@ -684,9 +682,7 @@ function setupDropdown(d) {
   if (d) {
     var container = $("#deployment_store");
     var content = "";
-    console.log(d);
     $.each(d, function (k, v) {
-      console.log(v);
       content += `<option value='${v.id}'>${v.name}</option>`;
     });
 
