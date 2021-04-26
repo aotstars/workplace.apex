@@ -55,7 +55,6 @@ export function loginPage(route) {
     .off()
     .on("submit", function (e) {
       e.preventDefault();
-      alert(true);
       signin();
     });
 
