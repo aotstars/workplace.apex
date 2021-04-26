@@ -36,6 +36,7 @@ export async function signOutTemporary() {
   localStorage.removeItem("uid");
   localStorage.removeItem("company");
   localStorage.removeItem("token");
+  localStorage.removeItem("status");
 }
 
 export async function signOut() {
@@ -53,6 +54,7 @@ export async function signOut() {
         localStorage.removeItem("uid");
         localStorage.removeItem("company");
         localStorage.removeItem("token");
+        localStorage.removeItem("status");
         resolve(response);
       },
       error: function (error) {

@@ -6,14 +6,11 @@ import { init_resume } from "./resume/index.js";
 export function route(path) {
   setTimeout(function () {
     routeActive();
-    console.log(path);
     switch (path) {
       case "":
       case "index":
         loginPage();
         break;
-      // case "index-home":
-      //   init_home();
       case "index-supervisor":
         init_supervisor();
         break;
@@ -24,7 +21,6 @@ export function route(path) {
         init_resume();
         break;
       default:
-        // init_home();
         break;
     }
     account();
