@@ -6,14 +6,19 @@ import {
   get_stores_url,
 } from "../env.js";
 
-var url = new URL(window.location.href);
-let _id = url.searchParams.get("id");
-let _company = url.searchParams.get("company");
-let store_id = localStorage.getItem("uid");
+let url,
+  _id,
+  _company,
+  store_id = "";
+
+function setupParams() {
+  url = new URL(window.location.href);
+  _id = url.searchParams.get("id");
+  _company = url.searchParams.get("company");
+  store_id = localStorage.getItem("uid");
+}
 
 async function getStoreLists() {
-  $("#preloader").removeClass("preloader-hide");
-
   try {
     const response = await get(`${get_stores_url}/${_company}`);
     if (response.status === 200) {
@@ -22,7 +27,6 @@ async function getStoreLists() {
   } catch (err) {
     console.log(err);
   }
-  $("#preloader").addClass("preloader-hide");
 }
 
 async function getApplicantDetails() {
@@ -58,7 +62,7 @@ async function getReviewDetails(_ref_id) {
   $("#preloader").addClass("preloader-hide");
 }
 
-async function setupResume(d) {
+function setupResume(d) {
   if (d && d.length > 0) {
     const { data } = d[0];
     let profile = d[0];
@@ -711,8 +715,12 @@ async function reviewApplicant() {
 }
 
 export async function init_resume() {
+  $("#preloader").removeClass("preloader-hide");
+  await setupParams();
   await getStoreLists();
   await getApplicantDetails();
+  $("#preloader").addClass("preloader-hide");
+
   $("#store_review__form")
     .off()
     .on("submit", function (e) {
