@@ -1,4 +1,4 @@
-export const login_url = "/internal/auth/login";
+export const login_url = "/internal/v1/auth/login";
 export const validate_url = "/internal/auth/validate";
 export const forgot_url = "/internal/auth/forgot";
 export const logout_url = "/auth/sign-out";
