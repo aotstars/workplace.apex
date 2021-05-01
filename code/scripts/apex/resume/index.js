@@ -550,7 +550,7 @@ function setupReviews(d) {
     form
       .find("span.color-highlight")
       .removeClass("input-style-1-inactive")
-      .addClass("input-style-1-active");
+      .addClass("input-style-1-active bg-grey");
     form.find("input,select,textarea").attr("disabled", true);
     form.find("button").remove();
   }
