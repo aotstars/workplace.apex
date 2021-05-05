@@ -1,3 +1,4 @@
+import { authPage } from "./auth.js";
 import { loginPage } from "./login/index.js";
 import { account } from "./accounts/index.js";
 import { init_supervisor } from "./supervisor/index.js";

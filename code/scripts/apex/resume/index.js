@@ -695,6 +695,7 @@ function setupDropdown(d) {
 }
 
 async function reviewApplicant() {
+  $("#preloader").addClass("preloader-hide");
   const evalData = $("#store_review__form").serializeArray();
   const d = {
     company: _company,
@@ -703,15 +704,17 @@ async function reviewApplicant() {
     store_assess: JSON.stringify(jQFormSerializeArrToJson(evalData)),
     review_status: $("#store_evaluation").val(),
   };
-
   try {
     const response = await post(`${post_applicant_store_eval_url}`, d);
     if (response.status === 200) {
+      alert("Store Review Submitted.");
       location.reload();
     }
   } catch (err) {
     console.log(err);
   }
+
+  $("#preloader").removeClass("preloader-hide");
 }
 
 export async function init_resume() {

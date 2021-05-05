@@ -1,14 +1,5 @@
 import { authUser, forgotPassword, redirectIfLoggedIn } from "../auth.js";
 
-function showErrorMessage(message) {
-  $("#signin-error-message").html(message);
-  $("#signin-error-message").removeAttr("hidden");
-}
-
-function hideErrorMessage() {
-  $("#signin-error-message").attr("hidden", true);
-}
-
 function signin() {
   authUser(
     JSON.stringify({

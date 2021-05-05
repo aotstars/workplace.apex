@@ -67,11 +67,12 @@ export async function signOut() {
 
 export function authPage() {
   if (localStorage.getItem("jwt") === null) {
-    window.location.href = "index.html";
+    window.location.href = "/";
   }
 }
 
 export function redirectIfLoggedIn() {
+  console.log(localStorage.getItem("jwt"));
   if (localStorage.getItem("jwt") !== null) {
     window.location.href = `index-${localStorage.getItem("route")}.html`;
   }
