@@ -2,6 +2,7 @@ export const login_url = "/internal/v1/auth/login";
 export const validate_url = "/internal/auth/validate";
 export const forgot_url = "/internal/auth/forgot";
 export const logout_url = "/auth/sign-out";
+export const reset_url = "/internal/auth/reset";
 
 export const get_applicants_url = "/internal/stores/ts";
 export const get_applicant_jobs_url = "/internal/system/jobs";

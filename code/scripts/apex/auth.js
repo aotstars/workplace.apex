@@ -1,4 +1,10 @@
-import { getAppUrl, login_url, forgot_url, logout_url } from "./env.js";
+import {
+  getAppUrl,
+  login_url,
+  forgot_url,
+  logout_url,
+  reset_url,
+} from "./env.js";
 
 export function authUser(credentials, success, error) {
   $.ajax({
@@ -10,6 +16,21 @@ export function authUser(credentials, success, error) {
       xhr.setRequestHeader("X-API-KEY", "CODEX@123");
     },
     data: JSON.parse(credentials),
+    success: success,
+    error: error,
+  });
+}
+
+export async function resetPassword(data, success, error) {
+  $.ajax({
+    url: getAppUrl() + reset_url,
+    crossDomain: true,
+    type: "patch",
+    dataType: "json",
+    beforeSend: function (xhr) {
+      xhr.setRequestHeader("X-API-KEY", "CODEX@123");
+    },
+    data: JSON.parse(data),
     success: success,
     error: error,
   });

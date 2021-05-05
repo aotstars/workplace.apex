@@ -20,6 +20,8 @@ function signin() {
       }
     },
     function (error) {
+      alert("Invalid credentials");
+      window.location.reload();
       console.log(error.responseJSON.error);
     }
   );
@@ -32,7 +34,8 @@ function forgot() {
       email: container.find("#forgot_email").val(),
     }),
     function (response) {
-      window.location.reload();
+      alert("Reset password link is sent to your email.");
+      window.location.href = "/";
     },
     function (error) {
       console.log(error.responseJSON.error);

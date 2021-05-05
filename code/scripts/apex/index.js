@@ -1,6 +1,7 @@
 import { authPage } from "./auth.js";
 import { loginPage } from "./login/index.js";
 import { account } from "./accounts/index.js";
+import { init_reset_password } from "./reset/index.js";
 import { init_supervisor } from "./supervisor/index.js";
 import { init_applicant } from "./applicant/index.js";
 import { init_resume } from "./resume/index.js";
@@ -11,6 +12,9 @@ export function route(path) {
       case "":
       case "index":
         loginPage();
+        break;
+      case "index-reset":
+        init_reset_password();
         break;
       case "index-supervisor":
         init_supervisor();
