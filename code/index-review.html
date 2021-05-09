@@ -1,0 +1,2013 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover" />
+    <title>APEX - Applicant Review</title>
+    <link rel="stylesheet" type="text/css" href="styles/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="fonts/css/fontawesome-all.min.css">
+    <link rel="stylesheet" type="text/css" href="styles/store.css">
+    <link rel="manifest" href="_manifest.json" data-pwa-version="set_in_manifest_and_pwa_js">
+    <link rel="apple-touch-icon" sizes="180x180" href="app/icons/icon-192x192.png">
+</head>
+
+<body class="theme-light">
+
+    <div id="preloader">
+        <div class="spinner-border color-highlight" role="status"></div>
+    </div>
+
+    <div id="page">
+
+        <div class="header header-fixed header-logo-center header-auto-show">
+            <a href="index.html" class="header-title">Dashboard</a>
+            <a href="#" data-back-button class="header-icon header-icon-1"><i class="fas fa-chevron-left"></i></a>
+            <a href="#" data-menu="menu-main" class="header-icon header-icon-4"><i class="fas fa-bars"></i></a>
+            <a href="#" data-toggle-theme class="header-icon header-icon-3 show-on-theme-dark"><i
+                    class="fas fa-sun"></i></a>
+            <a href="#" data-toggle-theme class="header-icon header-icon-3 show-on-theme-light"><i
+                    class="fas fa-moon"></i></a>
+        </div>
+
+        <div id="footer-bar" class="footer-bar-6">
+            <a class='active-nav' href="index.html"><i class="fa fa-user"></i><span>Applicants</span></a>
+            <a href="javascript:void(0)" id="logout"><i class="fa fa-sign-out-alt"></i><span>Signout</span></a>
+        </div>
+
+        <div class="page-title page-title-fixed">
+            <div>
+                <h1>Applicant Review</h1>
+            </div>
+        </div>
+        <div class="page-title-clear"></div>
+
+        <div class="page-content content">
+            <div class='applicant-review'>
+                <div class='applicant-review__form'>
+
+                    <div class="card mx-0 card-style">
+                        <div class="content">
+                            <h5 class="font-14 opacity-50">Team Supervisor Assessment</h5>
+                            <div class="divider mb-3"></div>
+                            <div id='applicant-review-form' class="mb-0">
+                                <button class="btn accordion-btn border-0 color-theme collapsed" data-toggle="collapse"
+                                    data-target="#collapse2" aria-expanded="false" style="width: 100%">
+                                    <i class="fa fa-star color-yellow-dark mr-2"></i>
+                                    Recruiter Review
+                                    <i class="fa fa-chevron-down font-10 accordion-icon"></i>
+                                </button>
+                                <div id="collapse2" class="collapse mb-2" data-parent="#applicant-review-form">
+                                    <div class="py-2 pl-3 pr-3">
+                                        <form action="" id="form-assessment">
+                                            <hr>
+                                            <div class="row mt-4">
+                                                <div class="col-md-12 text-left text-black">
+                                                    <h4 class="mb-1"><strong>Application Assessment</strong></h4>
+                                                </div>
+                                            </div>
+                                            <div class="row mt-2">
+                                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                    <div class="form-group"> <label class="control-label"> Date </label>
+                                                        <input class="form-control" type="date" name="assess_date"
+                                                            required="" disabled="true">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <hr>
+                                            <div class="row mt-4">
+                                                <div class="col-md-12 text-left text-black">
+                                                    <h4 class="mb-1"><strong>Exam Result</strong></h4>
+                                                </div>
+                                            </div>
+                                            <br>
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <h6 class="mb-1">Test I: Intelligence Quotience Test</h6>
+                                                </div>
+                                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                    <div class="form-group"> <label class="control-label"> Raw Score
+                                                        </label> <input class="form-control" type="text"
+                                                            name="assess_raw_score" required="" disabled="true"> </div>
+                                                </div>
+                                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                    <div class="form-group"> <label class="control-label"> Percentage
+                                                        </label> <input class="form-control" type="text"
+                                                            name="assess_percentage" required="" disabled="true"> </div>
+                                                </div>
+                                            </div>
+                                            <br>
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <h6 class="mb-1">Test II: Occupational Test</h6>
+                                                </div>
+                                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                    <div class="form-group">
+                                                        <label class="control-label"> Result </label>
+                                                        <select name="assess_occ_test" class="form-control" required=""
+                                                            disabled="true">
+                                                            <option value="" selected="" disabled="true">- Rate -
+                                                            </option>
+                                                            <option value="0" selected="">Passed</option>
+                                                            <option value="1">Failed</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <br>
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <h6 class="mb-1">Test III: Personality Test</h6>
+                                                </div>
+                                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                    <div class="form-group">
+                                                        <label class="control-label"> Result </label>
+                                                        <select name="assess_personality_test" class="form-control"
+                                                            required="" disabled="true">
+                                                            <option value="" selected="" disabled="true">- Rate -
+                                                            </option>
+                                                            <option value="0" selected="">Passed</option>
+                                                            <option value="1">Failed</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <hr>
+                                            <div class="row mt-4">
+                                                <div class="col-md-12 text-left text-black">
+                                                    <h4 class="mb-1"><strong>Overall</strong></h4>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <h6 class="mb-1">Evaluation</h6>
+                                                </div>
+                                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                    <div class="form-group">
+                                                        <label class="control-label"> Result </label>
+                                                        <select name="assess_evaluation" id="resultEVREC"
+                                                            class="form-control" required="" disabled="true">
+                                                            <option value="" selected="" disabled="true">- Rate -
+                                                            </option>
+                                                            <option value="1" selected="">Passed</option>
+                                                            <option value="2">Failed</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 "
+                                                    id="recommendationGroup">
+                                                    <div
+                                                        class="form-group d-flex justify-content-start align-items-center">
+                                                        <label class="control-label mb-0 w-100"
+                                                            style="margin-left: .5rem;display: flex;align-items:center;">
+                                                            <input type="checkbox" name="assess_front"
+                                                                class="form-control inline-chkbox"
+                                                                style="width:5%;margin-right: .5rem" disabled="true">
+                                                            Highly recommended in front of the
+                                                            house (cashier, dining, QC)</label>
+                                                    </div>
+                                                    <div
+                                                        class="form-group d-flex justify-content-start align-items-center">
+                                                        <label class="control-label mb-0 w-100"
+                                                            style="margin-left: .5rem;display: flex;align-items:center;">
+                                                            <input type="checkbox" name="assess_back"
+                                                                class="form-control inline-chkbox"
+                                                                style="width:5%; margin-right: .5rem" disabled="true">
+                                                            Highly recommended in back of the house
+                                                            (kitchen, grill) </label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                    <div class="form-group"> <label
+                                                            class="control-label">Remarks</label> <textarea
+                                                            class="form-control" name="asseess_remarks" rows="10"
+                                                            columns="30" required="required"
+                                                            disabled="true"> Test </textarea> </div>
+                                                </div>
+                                            </div>
+                                            <div id="assessment-fields">
+                                                <hr>
+                                                <div class="row">
+                                                    <div class="col-lg-12 col-md-4 col-sm-12 col-xs-12">
+                                                        <div class="form-group">
+                                                            <label class="control-label"> Possible Deployment Store
+                                                            </label>
+                                                            <select class="form-control" name="assess_deployment_store"
+                                                                id="deployment_store" disabled="true">
+
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <hr>
+                                                <div class="row mt-4">
+                                                    <div class="col-md-12 text-left text-black">
+                                                        <h4 class="mb-1"><strong>Appearance</strong></h4>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                        <div class="form-group">
+                                                            <label class="control-label"> Pleasing Personality </label>
+                                                            <select name="assess_pleasing" class="form-control"
+                                                                required="" disabled="true">
+                                                                <option value="" disabled="true">- Rate -</option>
+                                                                <option value="1" selected="">1</option>
+                                                                <option value="2">2</option>
+                                                                <option value="3">3</option>
+                                                                <option value="4">4</option>
+                                                                <option value="5">5</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                        <div class="form-group">
+                                                            <label class="control-label"> Grooming and Clothing </label>
+                                                            <select name="assess_groom" class="form-control" required=""
+                                                                disabled="true">
+                                                                <option value="" disabled="true">- Rate -</option>
+                                                                <option value="1" selected="">1</option>
+                                                                <option value="2">2</option>
+                                                                <option value="3">3</option>
+                                                                <option value="4">4</option>
+                                                                <option value="5">5</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                        <div class="form-group">
+                                                            <label class="control-label"> Body Language </label>
+                                                            <select name="assess_body" class="form-control" required=""
+                                                                disabled="true">
+                                                                <option value="" disabled="true">- Rate -</option>
+                                                                <option value="1" selected="">1</option>
+                                                                <option value="2">2</option>
+                                                                <option value="3">3</option>
+                                                                <option value="4">4</option>
+                                                                <option value="5">5</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                        <div class="form-group">
+                                                            <label class="control-label"> Eye Contact </label>
+                                                            <select name="assess_eye" class="form-control" required=""
+                                                                disabled="true">
+                                                                <option value="" disabled="true">- Rate -</option>
+                                                                <option value="1" selected="">1</option>
+                                                                <option value="2">2</option>
+                                                                <option value="3">3</option>
+                                                                <option value="4">4</option>
+                                                                <option value="5">5</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <hr>
+                                                <div class="row mt-4">
+                                                    <div class="col-md-12 text-left text-black">
+                                                        <h4 class="mb-1"><strong>Characteristics</strong></h4>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                        <div class="form-group">
+                                                            <label class="control-label"> Assertive </label>
+                                                            <select name="assess_assertive" class="form-control"
+                                                                required="" disabled="true">
+                                                                <option value="" disabled="true">- Rate -</option>
+                                                                <option value="1" selected="">1</option>
+                                                                <option value="2">2</option>
+                                                                <option value="3">3</option>
+                                                                <option value="4">4</option>
+                                                                <option value="5">5</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                        <div class="form-group">
+                                                            <label class="control-label"> Natural Leader </label>
+                                                            <select name="assess_natural" class="form-control"
+                                                                required="" disabled="true">
+                                                                <option value="" disabled="true">- Rate -</option>
+                                                                <option value="1" selected="">1</option>
+                                                                <option value="2">2</option>
+                                                                <option value="3">3</option>
+                                                                <option value="4">4</option>
+                                                                <option value="5">5</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                        <div class="form-group">
+                                                            <label class="control-label"> Cooperative </label>
+                                                            <select name="assess_cooperative" class="form-control"
+                                                                required="" disabled="true">
+                                                                <option value="" disabled="true">- Rate -</option>
+                                                                <option value="1" selected="">1</option>
+                                                                <option value="2">2</option>
+                                                                <option value="3">3</option>
+                                                                <option value="4">4</option>
+                                                                <option value="5">5</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                        <div class="form-group">
+                                                            <label class="control-label"> Responsible </label>
+                                                            <select name="assess_responsible" class="form-control"
+                                                                required="" disabled="true">
+                                                                <option value="" disabled="true">- Rate -</option>
+                                                                <option value="1" selected="">1</option>
+                                                                <option value="2">2</option>
+                                                                <option value="3">3</option>
+                                                                <option value="4">4</option>
+                                                                <option value="5">5</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                        <div class="form-group">
+                                                            <label class="control-label"> Self Motivated </label>
+                                                            <select name="assess_self_motivated" class="form-control"
+                                                                required="" disabled="true">
+                                                                <option value="" disabled="true">- Rate -</option>
+                                                                <option value="1" selected="">1</option>
+                                                                <option value="2">2</option>
+                                                                <option value="3">3</option>
+                                                                <option value="4">4</option>
+                                                                <option value="5">5</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                        <div class="form-group">
+                                                            <label class="control-label"> Patience </label>
+                                                            <select name="assess_patience" class="form-control"
+                                                                required="" disabled="true">
+                                                                <option value="" disabled="true">- Rate -</option>
+                                                                <option value="1" selected="">1</option>
+                                                                <option value="2">2</option>
+                                                                <option value="3">3</option>
+                                                                <option value="4">4</option>
+                                                                <option value="5">5</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                        <div class="form-group">
+                                                            <label class="control-label"> Dedicated </label>
+                                                            <select name="assess_dedicated" class="form-control"
+                                                                required="" disabled="true">
+                                                                <option value="" disabled="true">- Rate -</option>
+                                                                <option value="1" selected="">1</option>
+                                                                <option value="2">2</option>
+                                                                <option value="3">3</option>
+                                                                <option value="4">4</option>
+                                                                <option value="5">5</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                        <div class="form-group">
+                                                            <label class="control-label"> Success Oriented </label>
+                                                            <select name="assess_success_oriented" class="form-control"
+                                                                required="" disabled="true">
+                                                                <option value="" disabled="true">- Rate -</option>
+                                                                <option value="1" selected="">1</option>
+                                                                <option value="2">2</option>
+                                                                <option value="3">3</option>
+                                                                <option value="4">4</option>
+                                                                <option value="5">5</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                        <div class="form-group">
+                                                            <label class="control-label"> Quick Learner </label>
+                                                            <select name="assess_quick_learner" class="form-control"
+                                                                required="" disabled="true">
+                                                                <option value="" disabled="true">- Rate -</option>
+                                                                <option value="1" selected="">1</option>
+                                                                <option value="2">2</option>
+                                                                <option value="3">3</option>
+                                                                <option value="4">4</option>
+                                                                <option value="5">5</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                        <div class="form-group">
+                                                            <label class="control-label"> Hard working </label>
+                                                            <select name="assess_hard_working" class="form-control"
+                                                                required="" disabled="true">
+                                                                <option value="" disabled="true">- Rate -</option>
+                                                                <option value="1" selected="">1</option>
+                                                                <option value="2">2</option>
+                                                                <option value="3">3</option>
+                                                                <option value="4">4</option>
+                                                                <option value="5">5</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                        <div class="form-group">
+                                                            <label class="control-label"> Intelligent </label>
+                                                            <select name="assess_intelligent" class="form-control"
+                                                                required="" disabled="true">
+                                                                <option value="" disabled="true">- Rate -</option>
+                                                                <option value="1" selected="">1</option>
+                                                                <option value="2">2</option>
+                                                                <option value="3">3</option>
+                                                                <option value="4">4</option>
+                                                                <option value="5">5</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                        <div class="form-group">
+                                                            <label class="control-label"> Self-Confident </label>
+                                                            <select name="assess_self_confident" class="form-control"
+                                                                required="" disabled="true">
+                                                                <option value="" disabled="true">- Rate -</option>
+                                                                <option value="1" selected="">1</option>
+                                                                <option value="2">2</option>
+                                                                <option value="3">3</option>
+                                                                <option value="4">4</option>
+                                                                <option value="5">5</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <hr>
+                                                <div class="row mt-4">
+                                                    <div class="col-md-12 text-left text-black">
+                                                        <h4 class="mb-1"><strong>Qualifications</strong></h4>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                        <div class="form-group">
+                                                            <label class="control-label"> Education / Training </label>
+                                                            <select name="assess_educ_training" class="form-control"
+                                                                required="" disabled="true">
+                                                                <option value="" disabled="true">- Rate -</option>
+                                                                <option value="1" selected="">1</option>
+                                                                <option value="2">2</option>
+                                                                <option value="3">3</option>
+                                                                <option value="4">4</option>
+                                                                <option value="5">5</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                        <div class="form-group">
+                                                            <label class="control-label"> Sales Experience </label>
+                                                            <select name="assess_sales_exp" class="form-control"
+                                                                required="" disabled="true">
+                                                                <option value="" disabled="true">- Rate -</option>
+                                                                <option value="1" selected="">1</option>
+                                                                <option value="2">2</option>
+                                                                <option value="3">3</option>
+                                                                <option value="4">4</option>
+                                                                <option value="5">5</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                        <div class="form-group">
+                                                            <label class="control-label"> Service Crew Experience
+                                                            </label>
+                                                            <select name="assess_serv_crew_exp" class="form-control"
+                                                                required="" disabled="true">
+                                                                <option value="" disabled="true">- Rate -</option>
+                                                                <option value="1" selected="">1</option>
+                                                                <option value="2">2</option>
+                                                                <option value="3">3</option>
+                                                                <option value="4">4</option>
+                                                                <option value="5">5</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                        <div class="form-group">
+                                                            <label class="control-label"> Cashier Experience </label>
+                                                            <select name="assess_cash_exp" class="form-control"
+                                                                required="" disabled="true">
+                                                                <option value="" disabled="true">- Rate -</option>
+                                                                <option value="1" selected="">1</option>
+                                                                <option value="2">2</option>
+                                                                <option value="3">3</option>
+                                                                <option value="4">4</option>
+                                                                <option value="5">5</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                        <div class="form-group">
+                                                            <label class="control-label"> Communication Skills </label>
+                                                            <select name="assess_comm_skill" class="form-control"
+                                                                required="" disabled="true">
+                                                                <option value="" disabled="true">- Rate -</option>
+                                                                <option value="1" selected="">1</option>
+                                                                <option value="2">2</option>
+                                                                <option value="3">3</option>
+                                                                <option value="4">4</option>
+                                                                <option value="5">5</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <hr>
+                                                <div class="row mt-4">
+                                                    <div class="col-md-12 text-left text-black">
+                                                        <h4 class="mb-1"><strong>Decision / Problem Solving</strong>
+                                                        </h4>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                        <div class="form-group">
+                                                            <label class="control-label"> Creativity </label>
+                                                            <select name="assess_creativity" class="form-control"
+                                                                required="" disabled="true">
+                                                                <option value="" disabled="true">- Rate -</option>
+                                                                <option value="1" selected="">1</option>
+                                                                <option value="2">2</option>
+                                                                <option value="3">3</option>
+                                                                <option value="4">4</option>
+                                                                <option value="5">5</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                        <div class="form-group">
+                                                            <label class="control-label"> Logic </label>
+                                                            <select name="assess_logic" class="form-control" required=""
+                                                                disabled="true">
+                                                                <option value="" disabled="true">- Rate -</option>
+                                                                <option value="1" selected="">1</option>
+                                                                <option value="2">2</option>
+                                                                <option value="3">3</option>
+                                                                <option value="4">4</option>
+                                                                <option value="5">5</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                        <div class="form-group">
+                                                            <label class="control-label"> Service Crew Experience
+                                                            </label>
+                                                            <select name="assess_serv_crew_exp" class="form-control"
+                                                                required="" disabled="true">
+                                                                <option value="" disabled="true">- Rate -</option>
+                                                                <option value="1" selected="">1</option>
+                                                                <option value="2">2</option>
+                                                                <option value="3">3</option>
+                                                                <option value="4">4</option>
+                                                                <option value="5">5</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <hr>
+                                                <div class="row mt-4">
+                                                    <div class="col-md-12 text-left text-black">
+                                                        <h4 class="mb-1"><strong>Reason for Selecting Particular
+                                                                Organization</strong></h4>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                        <div class="form-group">
+                                                            <label class="control-label"> Commitment </label>
+                                                            <select name="assess_commitment" class="form-control"
+                                                                required="" disabled="true">
+                                                                <option value="" disabled="true">- Rate -</option>
+                                                                <option value="1" selected="">1</option>
+                                                                <option value="2">2</option>
+                                                                <option value="3">3</option>
+                                                                <option value="4">4</option>
+                                                                <option value="5">5</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                        <div class="form-group">
+                                                            <label class="control-label"> Knowledge of Organization
+                                                            </label>
+                                                            <select name="assess_know_org" class="form-control"
+                                                                required="" disabled="true">
+                                                                <option value="" disabled="true">- Rate -</option>
+                                                                <option value="1" selected="">1</option>
+                                                                <option value="2">2</option>
+                                                                <option value="3">3</option>
+                                                                <option value="4">4</option>
+                                                                <option value="5">5</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                        <div class="form-group">
+                                                            <label class="control-label"> Knowledge of Industry </label>
+                                                            <select name="assess_know_ind" class="form-control"
+                                                                required="" disabled="true">
+                                                                <option value="" disabled="true">- Rate -</option>
+                                                                <option value="1" selected="">1</option>
+                                                                <option value="2">2</option>
+                                                                <option value="3">3</option>
+                                                                <option value="4">4</option>
+                                                                <option value="5">5</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <hr>
+                                                <div class="row mt-4">
+                                                    <div class="col-md-12 text-left text-black">
+                                                        <h4 class="mb-1"><strong>Job Expectation</strong></h4>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                        <div class="form-group">
+                                                            <label class="control-label"> Realistic </label>
+                                                            <select name="assess_realistic" class="form-control"
+                                                                required="" disabled="true">
+                                                                <option value="" disabled="true">- Rate -</option>
+                                                                <option value="1" selected="">1</option>
+                                                                <option value="2">2</option>
+                                                                <option value="3">3</option>
+                                                                <option value="4">4</option>
+                                                                <option value="5">5</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                        <div class="form-group">
+                                                            <label class="control-label"> Match Employer`s needs
+                                                            </label>
+                                                            <select name="assess_match_needs" class="form-control"
+                                                                required="" disabled="true">
+                                                                <option value="" disabled="true">- Rate -</option>
+                                                                <option value="1" selected="">1</option>
+                                                                <option value="2">2</option>
+                                                                <option value="3">3</option>
+                                                                <option value="4">4</option>
+                                                                <option value="5">5</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <hr>
+                                                <div class="row mt-4">
+                                                    <div class="col-md-12 text-left text-black">
+                                                        <h4 class="mb-1"><strong>Weakness</strong></h4>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                        <div class="form-group">
+                                                            <label class="control-label"> Getting Nervous around people
+                                                            </label>
+                                                            <select name="assess_nervous" class="form-control"
+                                                                required="" disabled="true">
+                                                                <option value="" disabled="true">- Rate -</option>
+                                                                <option value="1" selected="">1</option>
+                                                                <option value="2">2</option>
+                                                                <option value="3">3</option>
+                                                                <option value="4">4</option>
+                                                                <option value="5">5</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                        <div class="form-group">
+                                                            <label class="control-label"> Debater </label>
+                                                            <select name="assess_debater" class="form-control"
+                                                                required="" disabled="true">
+                                                                <option value="" disabled="true">- Rate -</option>
+                                                                <option value="1" selected="">1</option>
+                                                                <option value="2">2</option>
+                                                                <option value="3">3</option>
+                                                                <option value="4">4</option>
+                                                                <option value="5">5</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                        <div class="form-group">
+                                                            <label class="control-label"> Going out of one`s way
+                                                            </label>
+                                                            <select name="assess_out_of_way" class="form-control"
+                                                                required="" disabled="true">
+                                                                <option value="" disabled="true">- Rate -</option>
+                                                                <option value="1" selected="">1</option>
+                                                                <option value="2">2</option>
+                                                                <option value="3">3</option>
+                                                                <option value="4">4</option>
+                                                                <option value="5">5</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                        <div class="form-group">
+                                                            <label class="control-label"> Sensitive to Criticisms
+                                                            </label>
+                                                            <select name="assess_sensitive_criticism"
+                                                                class="form-control" required="" disabled="true">
+                                                                <option value="" disabled="true">- Rate -</option>
+                                                                <option value="1" selected="">1</option>
+                                                                <option value="2">2</option>
+                                                                <option value="3">3</option>
+                                                                <option value="4">4</option>
+                                                                <option value="5">5</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <hr>
+                                            <div class="row mt-4">
+                                                <div class="col-md-12 text-left text-black">
+                                                    <h4 class="mb-1"><strong>Background Investigation</strong></h4>
+                                                </div>
+                                            </div>
+                                            <div class="row mt-2">
+                                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                    <div class="form-group"> <label class="control-label"> Date of
+                                                            Background Check </label> <input class="form-control"
+                                                            type="date" name="assess_bi_date" required=""
+                                                            disabled="true"> </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-lg-12 col-md-6 col-sm-12 col-xs-12">
+                                                    <div class="form-group"> <label class="control-label"> Position Held
+                                                        </label> <input class="form-control" type="text"
+                                                            name="assess_bi_pos_held" required="" disabled="true">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <hr>
+                                            <div class="row">
+                                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                    <div class="form-group"> <label class="control-label"> Company Name
+                                                        </label> <input class="form-control" type="text"
+                                                            name="assess_bi_company" required="" disabled="true"> </div>
+                                                </div>
+                                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                    <div class="form-group"> <label class="control-label"> Name of
+                                                            Contact Person </label> <input class="form-control"
+                                                            type="text" name="assess_bi_contact_pers" required=""
+                                                            disabled="true"> </div>
+                                                </div>
+                                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                    <div class="form-group"> <label class="control-label"> Position
+                                                        </label> <input class="form-control" type="text"
+                                                            name="assess_bi_contact_pers_pos" required=""
+                                                            disabled="true"> </div>
+                                                </div>
+                                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                    <div class="form-group"> <label class="control-label"> Contact
+                                                            Number </label> <input class="form-control" type="number"
+                                                            name="assess_bi_contact_pers_no" required=""
+                                                            disabled="true"> </div>
+                                                </div>
+                                            </div>
+                                            <br>
+                                            <div class="col-lg-12">
+                                                <h6 class="mb-1">Date of Employment</h6>
+                                            </div>
+                                            <hr>
+                                            <div class="row">
+                                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                    <div class="form-group"> <label class="control-label"> Start Date
+                                                        </label> <input class="form-control" type="date"
+                                                            name="assess_bi_appnt_startD" required="" disabled="true">
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                    <div class="form-group"> <label class="control-label"> Until
+                                                        </label> <input class="form-control" type="date"
+                                                            name="assess_bi_appnt_to" required="" disabled="true">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                    <div class="form-group">
+                                                        <label class="control-label"> Performance </label>
+                                                        <select name="assess_bi_perfm" class="form-control" required=""
+                                                            disabled="true">
+                                                            <option value="" disabled="true">- Rate -</option>
+                                                            <option value="1">Fair</option>
+                                                            <option value="2">Average</option>
+                                                            <option value="3">Above Averarge</option>
+                                                            <option value="4" selected="">Excellent</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                    <div class="form-group"> <label class="control-label"> Relationship
+                                                            with peers </label> <input class="form-control" type="text"
+                                                            name="assess_bi_rel_peers" required="" disabled="true">
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                    <div class="form-group"> <label class="control-label"> Relationship
+                                                            with superiors </label> <input class="form-control"
+                                                            type="text" name="assess_bi_rel_superiors" required=""
+                                                            disabled="true"> </div>
+                                                </div>
+                                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                    <div class="form-group"> <label class="control-label"> Violations/
+                                                            Derogatory record </label> <input class="form-control"
+                                                            type="text" name="assess_bi_violations_derogatory"
+                                                            required="" disabled="true"> </div>
+                                                </div>
+                                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                    <div class="form-group"> <label class="control-label"> Reason for
+                                                            Leaving </label> <textarea class="form-control"
+                                                            name="assess_bi_rol" rows="10" columns="30"
+                                                            required="required" disabled="true"> N/A </textarea> </div>
+                                                </div>
+                                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                    <div class="form-group"> <label class="control-label"> Additional
+                                                            training </label> <input class="form-control" type="text"
+                                                            name="assess_bi_add_training" required="" disabled="true">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 "
+                                                id="recommendationGroup">
+                                                <div class="form-group d-flex justify-content-start align-items-center">
+                                                    <label class="control-label mb-0 w-100"
+                                                        style="margin-left: 1%;white-space: break-spaces;display: flex;align-items:center;">
+                                                        <input type="checkbox" name="assess_bi_recommended"
+                                                            class="form-control inline-chkbox" style="width:5%;"
+                                                            checked="" disabled="true"> Recommended?</label>
+                                                </div>
+                                            </div>
+                                            <div class="row"> </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id='store-review-form'>
+                                <button class="btn accordion-btn border-0 color-theme collapsed" data-toggle="collapse"
+                                    data-target="#collapse3" aria-expanded="false" style="width: 100%">
+                                    <i class="fa fa-star color-yellow-dark mr-2"></i>
+                                    Store Review
+                                    <i class="fa fa-chevron-down font-10 accordion-icon"></i>
+                                </button>
+                                <div id="collapse3" class="collapse mb-2" data-parent="#store-review-form">
+                                    <div class="py-2 pl-3 pr-3">
+                                        <form id="store_review__form">
+                                            <input type="hidden" name="store" value="" id="store_inpt" />
+                                            <input type="hidden" name="reviewer" id="reviewer_inpt" />
+                                            <input type="hidden" name="store" value="" id="store_inpt" />
+                                            <input type="hidden" name="company" value="" id="company_inpt" />
+                                            <input type="hidden" name="id" value="" id="applicant_inpt" />
+                                            <div class="input-style input-style-2 input-required">
+                                                <span class="color-highlight input-style-1-inactive opacity-40">Name of
+                                                    Team
+                                                    Supervisor</span>
+                                                <input class="form-control" type="text" placeholder="" value=""
+                                                    name="assess_ts_name" required>
+                                                <span id="inpt-assess_ts_name" class=""></span>
+                                            </div>
+                                            <div class="input-style input-style-2 input-required">
+                                                <span class="color-highlight input-style-1-inactive  opacity-40">Work
+                                                    Station</span>
+                                                <input class="form-control" type="text" placeholder=""
+                                                    name="assess_store_station" required>
+                                                <span id="inpt-assess_store_station" class=""></span>
+                                            </div>
+                                            <div class="input-style input-style-2 input-required">
+                                                <span
+                                                    class="color-highlight input-style-1-inactive  opacity-40">Recommended
+                                                    by
+                                                    (Manager
+                                                    on
+                                                    Duty)</span>
+                                                <input class="form-control" type="text" value="" placeholder=""
+                                                    name="assess_reviewed_by" required>
+                                                <span id="inpt-assess_reviewed_by" class=""></span>
+                                            </div>
+                                            <div class="input-style input-style-2">
+                                                <span
+                                                    class="color-highlight input-style-1-active  opacity-40">Result</span>
+                                                <em><i class="fa fa-angle-down"></i></em>
+                                                <select class="form-control" name="assess_evaluation" value=""
+                                                    id="store_evaluation" required>
+                                                    <option value="" selected>- Rate -</option>
+                                                    <option value="1">Passed</option>
+                                                    <option value="2">Failed</option>
+                                                </select>
+                                                <span id="inpt-assess_evaluation" class=""></span>
+                                            </div>
+                                            <div class="input-style input-style-2 input-required">
+                                                <span
+                                                    class="color-highlight input-style-1-inactive  opacity-40">Remarks</span>
+                                                <em>(required)</em>
+                                                <textarea class="form-control" placeholder="" value=""
+                                                    name="asseess_remarks" rows="10" required></textarea>
+                                                <span id="inpt-asseess_remarks" class=""></span>
+                                            </div>
+
+                                            <div class="input-style input-style-2 input-required">
+                                                <span class="color-highlight input-style-1-inactive  opacity-40">Please
+                                                    type your
+                                                    name for
+                                                    confirmation</span>
+                                                <em>(required)</em>
+                                                <input type='text' class="form-control" value="" placeholder=""
+                                                    name="assess_name_confirmation" required />
+                                                <span id="inpt-assess_name_confirmation" class=""></span>
+                                            </div>
+                                            <button type="submit" id="submit__btn"
+                                                class="btn btn-full font-13 gradient-blue w-100" disabled>Submit
+                                                Assessment</button>
+
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+                <div class='applicant-review__resume'>
+                    <div class="card mx-0 card-style">
+                        <div class="content px-5">
+                            <div class="align-items-center text-center p-4 col-sm-12" id="short-details">
+                                <img src="#" width="150" id="short-img" />
+                                <h4 id="short-name" class="my-2"></h4>
+                                <p class="m-0 text-dark">
+                                    Email:
+                                    <span class="font-weight-bold" id="short-email">
+                                    </span>
+                                    Contact No:
+                                    <span class="font-weight-bold" id="short-contact"></span>
+                                </p>
+                                <div class="m-0 text-dark" id="short-address"></div>
+                            </div>
+
+                            <h3>Personal Information</h3>
+                            <hr />
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="row mb-0">
+                                        <div class="col-6">
+                                            <p class="text-dark pb-0 mb-0">Sex:</p>
+                                        </div>
+                                        <div class="col-6">
+                                            <p class="font-weight-bold pb-0 mb-0" id="short-gender"></p>
+                                        </div>
+                                    </div>
+                                    <div class="row mb-0">
+                                        <div class="col-6">
+                                            <p class="text-dark pb-0 mb-0">Civil Status:</p>
+                                        </div>
+                                        <div class="col-6">
+                                            <p class="font-weight-bold pb-0 mb-0" id="short-civil">
+
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="row mb-0">
+                                        <div class="col-6">
+                                            <p class="text-dark pb-0 mb-0">Religion:</p>
+                                        </div>
+                                        <div class="col-6">
+                                            <p class="font-weight-bold pb-0 mb-0" id="short-religion">
+
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="row mb-0">
+                                        <div class="col-6">
+                                            <p class="text-dark pb-0 mb-0">Citizenship:</p>
+                                        </div>
+                                        <div class="col-6">
+                                            <p class="font-weight-bold pb-0 mb-0" id="short-citizenship">
+
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="row mb-0">
+                                        <div class="col-6">
+                                            <p class="text-dark pb-0 mb-0">Height:</p>
+                                        </div>
+                                        <div class="col-6">
+                                            <p class="font-weight-bold pb-0 mb-0" id="short-height">
+
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="row mb-0">
+                                        <div class="col-6">
+                                            <p class="text-dark pb-0 mb-0">Weight:</p>
+                                        </div>
+                                        <div class="col-6">
+                                            <p class="font-weight-bold pb-0 mb-0" id="short-weight">
+
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="row mb-0">
+                                        <div class="col-6">
+                                            <p class="text-dark pb-0 mb-0 pb-3">Blood Type:</p>
+                                        </div>
+                                        <div class="col-6">
+                                            <p class="font-weight-bold pb-0 mb-0" id="short-blood"></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md">
+                                    <h6 class="pb-2">Government Id's</h6>
+                                    <div class="row mb-0">
+                                        <div class="col-6">
+                                            <p class="text-dark pb-0 mb-0">TIN:</p>
+                                        </div>
+                                        <div class="col-6">
+                                            <p class="font-weight-bold pb-0 mb-0" id="short-tin">
+
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="row mb-0">
+                                        <div class="col-6">
+                                            <p class="text-dark pb-0 mb-0">PHILHealth:</p>
+                                        </div>
+                                        <div class="col-6">
+                                            <p class="font-weight-bold pb-0 mb-0" id="short-philhealth">
+
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="row mb-0">
+                                        <div class="col-6">
+                                            <p class="text-dark pb-0 mb-0" id="short-blood">SSS:</p>
+                                        </div>
+                                        <div class="col-6">
+                                            <p class="font-weight-bold pb-0 mb-0" id="short-sss">
+
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="row mb-0">
+                                        <div class="col-6">
+                                            <p class="text-dark pb-2 mb-2">PAGIBIG:</p>
+                                        </div>
+                                        <div class="col-6">
+                                            <p class="font-weight-bold pb-0 mb-0" id="short-pagibig">
+
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <h6>Emergency Contact</h6>
+                                    <div class="row mb-0">
+                                        <div class="col-6">
+                                            <p class="text-dark pb-0 mb-0">Name:</p>
+                                        </div>
+                                        <div class="col-6">
+                                            <p class="font-weight-bold pb-0 mb-0" id="short-emerg-name">
+
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="row mb-0">
+                                        <div class="col-6">
+                                            <p class="text-dark pb-0 mb-0">Contact No. / Mobile No.:</p>
+                                        </div>
+                                        <div class="col-6">
+                                            <p class="font-weight-bold pb-0 mb-0" id="short-emerg-contact">
+
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="row mb-0">
+                                        <div class="col-6">
+                                            <p class="text-dark pb-0 mb-0">Relationship:</p>
+                                        </div>
+                                        <div class="col-6">
+                                            <p class="font-weight-bold pb-0 mb-0" id="short-emerg-relationship">
+
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <h3>Education Background</h3>
+                            <hr />
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="row mb-0">
+                                        <div class="col-6">
+                                            <p class="text-dark pb-0 mb-0">Elementary:</p>
+                                        </div>
+                                        <div class="col-6">
+                                            <p class="font-weight-bold pb-0 mb-0" id="short-elem"></p>
+                                        </div>
+                                    </div>
+                                    <div class="row mb-0">
+                                        <div class="col-6">
+                                            <p class="text-dark pb-0 mb-0">
+                                                Elementary Academic Honors/ Award Received:
+                                            </p>
+                                        </div>
+                                        <div class="col-6">
+                                            <p class="font-weight-bold pb-0 mb-0" id="short-elem-award"></p>
+                                        </div>
+                                    </div>
+                                    <div class="row mb-0">
+                                        <div class="col-6">
+                                            <p class="text-dark pb-3 mb-0">Year Completed:</p>
+                                        </div>
+                                        <div class="col-6">
+                                            <p class="font-weight-bold pb-0 mb-0" id="short-elem-year""></p>
+                                  </div>
+                                </div>
+                                <div class=" row mb-0">
+                                            <div class="col-6">
+                                                <p class="text-dark pb-0 mb-0">High School:</p>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="font-weight-bold pb-0 mb-0" id="short-hs"></p>
+                                            </div>
+                                        </div>
+                                        <div class="row mb-0">
+                                            <div class="col-6">
+                                                <p class="text-dark pb-0 mb-0">
+                                                    Highschool Academic Honors/ Award Received:
+                                                </p>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="font-weight-bold pb-0 mb-0" id="short-hs-award"></p>
+                                            </div>
+                                        </div>
+                                        <div class="row mb-0">
+                                            <div class="col-6">
+                                                <p class="text-dark pb-3 mb-0">Year Completed:</p>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="font-weight-bold pb-0 mb-0" id="short-hs-year"></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div id="short-college-container" class="hidden">
+                                            <div class="row mb-0">
+                                                <div class="col-6">
+                                                    <p class="text-dark pb-0 mb-0">College:</p>
+                                                </div>
+                                                <div class="col-6">
+                                                    <p class="font-weight-bold pb-0 mb-0" id="short-college"></p>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-0">
+                                                <div class="col-6">
+                                                    <p class="text-dark pb-0 mb-0">Did you graduate?:</p>
+                                                </div>
+                                                <div class="col-6">
+                                                    <p class="font-weight-bold pb-0 mb-0" id="short-college-status"></p>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-0">
+                                                <div class="col-6">
+                                                    <p class="text-dark pb-0 mb-0">
+                                                        College Academic Honors/ Award Received:
+                                                    </p>
+                                                </div>
+                                                <div class="col-6">
+                                                    <p class="font-weight-bold pb-0 mb-0" id="short-college-awards"></p>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-0">
+                                                <div class="col-6">
+                                                    <p class="text-dark pb-0 mb-0">Course / Degree:</p>
+                                                </div>
+                                                <div class="col-6">
+                                                    <p class="font-weight-bold pb-0 mb-0" id="short-college-course"></p>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-0">
+                                                <div class="col-6">
+                                                    <p class="text-dark pb-0 mb-0">Year Completed:</p>
+                                                </div>
+                                                <div class="col-6">
+                                                    <p class="font-weight-bold pb-0 mb-0" id="short-college-complete">
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="short-voc-container" class="hidden">
+                                            <div class="row mb-0">
+                                                <div class="col-6">
+                                                    <p class="text-dark pb-0 mb-0">Vocational:</p>
+                                                </div>
+                                                <div class="col-6">
+                                                    <p class="font-weight-bold pb-0 mb-0" id="short-voc"></p>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-0">
+                                                <div class="col-6">
+                                                    <p class="text-dark pb-0 mb-0">Course / Degree:</p>
+                                                </div>
+                                                <div class="col-6">
+                                                    <p class="font-weight-bold pb-0 mb-0" id="short-voc-course"></p>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-0">
+                                                <div class="col-6">
+                                                    <p class="text-dark pb-0 mb-0">Year Completed:</p>
+                                                </div>
+                                                <div class="col-6">
+                                                    <p class="font-weight-bold pb-0 mb-0" id="short-voc-year"></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <h3>Family Background</h3>
+                                <hr />
+
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div>
+                                            <div class="row mb-0">
+                                                <div class="col-6">
+                                                    <p class="text-dark pb-0 mb-0">Father's Name:</p>
+                                                </div>
+                                                <div class="col-6">
+                                                    <p class="font-weight-bold pb-0 mb-0" id="short-father"></p>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-0">
+                                                <div class="col-6">
+                                                    <p class="text-dark pb-0 mb-0">Birth Date:</p>
+                                                </div>
+                                                <div class="col-6">
+                                                    <p class="font-weight-bold pb-0 mb-0" id="short-father-dob"></p>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-0">
+                                                <div class="col-6">
+                                                    <p class="text-dark pb-3 mb-0">Age:</p>
+                                                </div>
+                                                <div class="col-6">
+                                                    <p class="font-weight-bold pb-0 mb-0" id="short-father-age"></p>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-0">
+                                                <div class="col-6">
+                                                    <p class="text-dark pb-0 mb-0">Occupation:</p>
+                                                </div>
+                                                <div class="col-6">
+                                                    <p class="font-weight-bold pb-0 mb-0" id="short-father-occ"></p>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                        <div>
+                                            <div class="row mb-0">
+                                                <div class="col-6">
+                                                    <p class="text-dark pb-0 mb-0">Mother's Maiden Name:</p>
+                                                </div>
+                                                <div class="col-6">
+                                                    <p class="font-weight-bold pb-0 mb-0" id="short-mother"></p>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-0">
+                                                <div class="col-6">
+                                                    <p class="text-dark pb-0 mb-0">Birth Date:</p>
+                                                </div>
+                                                <div class="col-6">
+                                                    <p class="font-weight-bold pb-0 mb-0" id="short-mother-dob"></p>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-0">
+                                                <div class="col-6">
+                                                    <p class="text-dark pb-0 mb-0">Age:</p>
+                                                </div>
+                                                <div class="col-6">
+                                                    <p class="font-weight-bold pb-0 mb-0" id="short-mother-age"></p>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-0">
+                                                <div class="col-6">
+                                                    <p class="text-dark pb-3 mb-0">Occupation:</p>
+                                                </div>
+                                                <div class="col-6">
+                                                    <p class="font-weight-bold pb-0 mb-0" id="short-mother-occ"></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div id="short-siblings-container" class="hidden">
+                                            <div class="row mb-0">
+                                                <div class="col-12">
+                                                    <p class="text-dark pb-0 mb-0">Siblings:</p>
+                                                </div>
+                                                <div class="col-12">
+                                                    <table class="w-100 mb-3">
+                                                        <tbody id="short-siblings-body">
+
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="row mb-0">
+                                                <div class="col-6">
+                                                    <p class="text-dark pb-0 mb-0">Spouse:</p>
+                                                </div>
+                                                <div class="col-6">
+                                                    <p class="font-weight-bold pb-0 mb-0" id="short-spouse"></p>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-0">
+                                                <div class="col-6">
+                                                    <p class="text-dark pb-0 mb-0">Age:</p>
+                                                </div>
+                                                <div class="col-6">
+                                                    <p class="font-weight-bold pb-0 mb-0" id="short-spouse-age"></p>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-0">
+                                                <div class="col-6">
+                                                    <p class="text-dark pb-0 mb-0">Occupation:</p>
+                                                </div>
+                                                <div class="col-6">
+                                                    <p class="font-weight-bold pb-0 mb-0" id="short-spouse-occ"></p>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-0">
+                                                <div class="col-6">
+                                                    <p class="text-dark pb-0 mb-0">Name of Child/Children:</p>
+                                                </div>
+                                                <div class="col-6">
+                                                    <p class="font-weight-bold pb-0 mb-0" id="short-spouse-child"></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <h3>Work Experience</h3>
+                                <hr />
+
+                                <h6>Latest employment</h6>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div>
+
+                                            <div class="row mb-0">
+                                                <div class="col-6">
+                                                    <p class="text-dark pb-0 mb-0">Position:</p>
+                                                </div>
+                                                <div class="col-6">
+                                                    <p class="font-weight-bold pb-0 mb-0" id="short-latest-employment">
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-0">
+                                                <div class="col-6">
+                                                    <p class="text-dark pb-0 mb-0">Start Date:</p>
+                                                </div>
+                                                <div class="col-6">
+                                                    <p class="font-weight-bold pb-0 mb-0" id="short-latest-startdate">
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-0">
+                                                <div class="col-6">
+                                                    <p class="text-dark pb-3 mb-0">End Date:</p>
+                                                </div>
+                                                <div class="col-6">
+                                                    <p class="font-weight-bold pb-0 mb-0" id="short-latest-enddate"></p>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-0">
+                                                <div class="col-6">
+                                                    <p class="text-dark pb-0 mb-0">Place of work:</p>
+                                                </div>
+                                                <div class="col-6">
+                                                    <p class="font-weight-bold pb-0 mb-0" id="short-latest-place"></p>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-0">
+                                                <div class="col-6">
+                                                    <p class="text-dark pb-0 mb-0">Monthly Salary:</p>
+                                                </div>
+                                                <div class="col-6">
+                                                    <p class="font-weight-bold pb-0 mb-0" id="short-latest-salary"></p>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-0">
+                                                <div class="col-6">
+                                                    <p class="text-dark pb-0 mb-0">Reason for Leaving:</p>
+                                                </div>
+                                                <div class="col-6">
+                                                    <p class="font-weight-bold pb-0 mb-0" id="short-latest-reason"></p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <h6 class="pt-3">Character reference</h6>
+                                        <div class="row mb-0">
+                                            <div class="col-12 hidden" id="short-character-container">
+                                                <div class="w-100 mb-3">
+                                                    <div id="short-character-body">
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <h3>Training Program</h3>
+                                <hr />
+
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="row mb-0">
+                                            <div class="col-6">
+                                                <p class="text-dark pb-0 mb-0">Special training courses:</p>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="font-weight-bold pb-0 mb-0" id="short-training">TEST</p>
+                                            </div>
+                                        </div>
+                                        <div class="row mb-0">
+                                            <div class="col-6">
+                                                <p class="text-dark pb-0 mb-0">
+                                                    Date Started-End / Number of Hours / Months:
+                                                </p>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="font-weight-bold pb-0 mb-0" id="short-dose">TEST</p>
+                                            </div>
+                                        </div>
+                                        <div class="row mb-0">
+                                            <div class="col-6">
+                                                <p class="text-dark pb-3 mb-0">Conducted / Sponsored by:</p>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="font-weight-bold pb-0 mb-0" id="short-sponsor">TEST</p>
+                                            </div>
+                                        </div>
+                                        <div class="row mb-0">
+                                            <div class="col-6">
+                                                <p class="text-dark pb-0 mb-0">
+                                                    Have you ever been charged or convicted of any crime or
+                                                    violation of any law:
+                                                </p>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="font-weight-bold pb-0 mb-0" id="short-convicted">N/A</p>
+                                            </div>
+                                        </div>
+                                        <div class="row mb-0">
+                                            <div class="col-6">
+                                                <p class="text-dark pb-0 mb-0">Special Skills:</p>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="font-weight-bold pb-0 mb-0" id="short-skill">TEST</p>
+                                            </div>
+                                        </div>
+                                        <div class="row mb-0">
+                                            <div class="col-6">
+                                                <p class="text-dark pb-0 mb-0">Non academic / Recognition:</p>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="font-weight-bold pb-0 mb-0" id="short-recognition">TEST</p>
+                                            </div>
+                                        </div>
+                                        <div class="row mb-0">
+                                            <div class="col-6">
+                                                <p class="text-dark pb-0 mb-0">
+                                                    Membership in Association / Organization:
+                                                </p>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="font-weight-bold pb-0 mb-0" id="short-membership">TEST</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <h3>Medical Examinations</h3>
+                                <hr />
+
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <h6>Childhood Illness</h6>
+                                        <div class="row mb-0">
+                                            <div class="col-6">
+                                                <p class="text-dark pb-0 mb-0">Measles:</p>
+                                            </div>
+                                            <div class="col-6">
+                                                <input type="checkbox" disabled="disabled" id="short-med-measle" />
+                                            </div>
+                                        </div>
+                                        <div class="row mb-0">
+                                            <div class="col-6">
+                                                <p class="text-dark pb-0 mb-0">Mumps:</p>
+                                            </div>
+                                            <div class="col-6">
+                                                <input type="checkbox" disabled="disabled" id="short-med-mumps" />
+                                            </div>
+                                        </div>
+                                        <div class="row mb-0">
+                                            <div class="col-6">
+                                                <p class="text-dark pb-0 mb-0">Chicken Pox:</p>
+                                            </div>
+                                            <div class="col-6">
+                                                <input type="checkbox" disabled="disabled" id="short-med-chicken" />
+                                            </div>
+                                        </div>
+                                        <div class="row mb-0">
+                                            <div class="col-6">
+                                                <p class="text-dark pb-0 mb-0">Rheumatic Fever:</p>
+                                            </div>
+                                            <div class="col-6">
+                                                <input type="checkbox" disabled="disabled" id="short-med-rheumatic" />
+                                            </div>
+                                        </div>
+                                        <div class="row mb-0">
+                                            <div class="col-6">
+                                                <p class="text-dark pb-0 mb-0">Polio:</p>
+                                            </div>
+                                            <div class="col-6">
+                                                <input type="checkbox" disabled="disabled" id="short-med-polio" />
+                                            </div>
+                                        </div>
+                                        <div class="row mb-0">
+                                            <div class="col-6">
+                                                <p class="text-dark pb-3 mb-0">grey:</p>
+                                            </div>
+                                            <div class="col-6">
+                                                <input type="checkbox" disabled="disabled" id="short-med-grey" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="row mb-0">
+                                            <div class="col-12" id="short-surgery-container">
+                                                <div class="w-100 mb-3">
+                                                    <div id="short-surgery-body">
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row mb-0">
+                                            <div class="col-12" id="short-hospitalization-container">
+                                                <div class="w-100 mb-3">
+                                                    <div id="short-hospitalization-body">
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <h6 class="pt-3">Medical History</h6>
+
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="row mb-0">
+                                            <div class="col-6">
+                                                <p class="text-dark pb-0 mb-0">Alcohol Abuse</p>
+                                            </div>
+                                            <div class="col-6">
+                                                <input type="checkbox" disabled="disabled"
+                                                    id="short-med-alcohol-abuse" />
+                                            </div>
+                                        </div>
+                                        <div class="row mb-0">
+                                            <div class="col-6">
+                                                <p class="text-dark pb-0 mb-0">Anemia</p>
+                                            </div>
+                                            <div class="col-6">
+                                                <input type="checkbox" disabled="disabled" id="short-med-anemia" />
+                                            </div>
+                                        </div>
+                                        <div class="row mb-0">
+                                            <div class="col-6">
+                                                <p class="text-dark pb-0 mb-0">Anesthetic Complication</p>
+                                            </div>
+                                            <div class="col-6">
+                                                <input type="checkbox" disabled="disabled" id="short-med-anesthetic" />
+                                            </div>
+                                        </div>
+                                        <div class="row mb-0">
+                                            <div class="col-6">
+                                                <p class="text-dark pb-0 mb-0">Anxiety Disorder</p>
+                                            </div>
+                                            <div class="col-6">
+                                                <input type="checkbox" disabled="disabled" id="short-med-anxiety" />
+                                            </div>
+                                        </div>
+                                        <div class="row mb-0">
+                                            <div class="col-6">
+                                                <p class="text-dark pb-0 mb-0">Asthma</p>
+                                            </div>
+                                            <div class="col-6">
+                                                <input type="checkbox" disabled="disabled" id="short-med-asthma" />
+                                            </div>
+                                        </div>
+                                        <div class="row mb-0">
+                                            <div class="col-6">
+                                                <p class="text-dark pb-0 mb-0">Autoimmune Problems</p>
+                                            </div>
+                                            <div class="col-6">
+                                                <input type="checkbox" disabled="disabled" id="short-med-autoimmune" />
+                                            </div>
+                                        </div>
+                                        <div class="row mb-0">
+                                            <div class="col-6">
+                                                <p class="text-dark pb-0 mb-0">Birth Defects</p>
+                                            </div>
+                                            <div class="col-6">
+                                                <input type="checkbox" disabled="disabled"
+                                                    id="short-med-birth-defect" />
+                                            </div>
+                                        </div>
+                                        <div class="row mb-0">
+                                            <div class="col-6">
+                                                <p class="text-dark pb-0 mb-0">Bladder Problems</p>
+                                            </div>
+                                            <div class="col-6">
+                                                <input type="checkbox" disabled="disabled"
+                                                    id="short-med-bladder-problem" />
+                                            </div>
+                                        </div>
+                                        <div class="row mb-0">
+                                            <div class="col-6">
+                                                <p class="text-dark pb-0 mb-0">Bleeding Disease</p>
+                                            </div>
+                                            <div class="col-6">
+                                                <input type="checkbox" disabled="disabled"
+                                                    id="short-med-bleeding-disease" />
+                                            </div>
+                                        </div>
+                                        <div class="row mb-0">
+                                            <div class="col-6">
+                                                <p class="text-dark pb-0 mb-0">Blood Clots</p>
+                                            </div>
+                                            <div class="col-6">
+                                                <input type="checkbox" disabled="disabled" id="short-med-blood-cloth" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="row mb-0">
+                                            <div class="col-6">
+                                                <p class="text-dark pb-0 mb-0">Blood Transfusion</p>
+                                            </div>
+                                            <div class="col-6">
+                                                <input type="checkbox" disabled="disabled"
+                                                    id="short-med-blood-transfusion" />
+                                            </div>
+                                        </div>
+                                        <div class="row mb-0">
+                                            <div class="col-6">
+                                                <p class="text-dark pb-0 mb-0">Bowel Disease</p>
+                                            </div>
+                                            <div class="col-6">
+                                                <input type="checkbox" disabled="disabled"
+                                                    id="short-med-bowel-disease" />
+                                            </div>
+                                        </div>
+                                        <div class="row mb-0">
+                                            <div class="col-6">
+                                                <p class="text-dark pb-0 mb-0">Depression</p>
+                                            </div>
+                                            <div class="col-6">
+                                                <input type="checkbox" disabled="disabled" id="short-med-depression" />
+                                            </div>
+                                        </div>
+                                        <div class="row mb-0">
+                                            <div class="col-6">
+                                                <p class="text-dark pb-0 mb-0">Diabetes</p>
+                                            </div>
+                                            <div class="col-6">
+                                                <input type="checkbox" disabled="disabled" id="short-med-diabetes" />
+                                            </div>
+                                        </div>
+                                        <div class="row mb-0">
+                                            <div class="col-6">
+                                                <p class="text-dark pb-0 mb-0">Hearing Impairment</p>
+                                            </div>
+                                            <div class="col-6">
+                                                <input type="checkbox" disabled="disabled" id="short-med-hearing" />
+                                            </div>
+                                        </div>
+                                        <div class="row mb-0">
+                                            <div class="col-6">
+                                                <p class="text-dark pb-0 mb-0">Heart Attack</p>
+                                            </div>
+                                            <div class="col-6">
+                                                <input type="checkbox" disabled="disabled"
+                                                    id="short-med-heart-attack" />
+                                            </div>
+                                        </div>
+                                        <div class="row mb-0">
+                                            <div class="col-6">
+                                                <p class="text-dark pb-0 mb-0">Heart Pain / Angina</p>
+                                            </div>
+                                            <div class="col-6">
+                                                <input type="checkbox" disabled="disabled" id="short-med-heart-pain" />
+                                            </div>
+                                        </div>
+                                        <div class="row mb-0">
+                                            <div class="col-6">
+                                                <p class="text-dark pb-0 mb-0">Hepatitis A</p>
+                                            </div>
+                                            <div class="col-6">
+                                                <input type="checkbox" disabled="disabled" id="short-med-hepatitisA" />
+                                            </div>
+                                        </div>
+                                        <div class="row mb-0">
+                                            <div class="col-6">
+                                                <p class="text-dark pb-0 mb-0">Hepatitis B</p>
+                                            </div>
+                                            <div class="col-6">
+                                                <input type="checkbox" disabled="disabled" id="short-med-hepatitisB" />
+                                            </div>
+                                        </div>
+                                        <div class="row mb-0">
+                                            <div class="col-6">
+                                                <p class="text-dark pb-0 mb-0">Hepatitis C</p>
+                                            </div>
+                                            <div class="col-6">
+                                                <input type="checkbox" disabled="disabled" id="short-med-hepatitisC" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <h6 class="pt-3">Family history</h6>
+
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="row mb-0">
+                                            <div class="col-6">
+                                                <p class="text-dark pb-0 mb-0">Adopted no Knowledge</p>
+                                            </div>
+                                            <div class="col-6">
+                                                <input type="checkbox" disabled="disabled" id="short-family-adopted" />
+                                            </div>
+                                        </div>
+                                        <div class="row mb-0">
+                                            <div class="col-6">
+                                                <p class="text-dark pb-0 mb-0">Alcohol Abuse</p>
+                                            </div>
+                                            <div class="col-6">
+                                                <input type="checkbox" disabled="disabled" id="short-family-alcohol" />
+                                            </div>
+                                        </div>
+                                        <div class="row mb-0">
+                                            <div class="col-6">
+                                                <p class="text-dark pb-0 mb-0">Anemia</p>
+                                            </div>
+                                            <div class="col-6">
+                                                <input type="checkbox" disabled="disabled" id="short-family-anemia" />
+                                            </div>
+                                        </div>
+                                        <div class="row mb-0">
+                                            <div class="col-6">
+                                                <p class="text-dark pb-0 mb-0">Anesthetic Complication</p>
+                                            </div>
+                                            <div class="col-6">
+                                                <input type="checkbox" disabled="disabled"
+                                                    id="short-family-anesthetic" />
+                                            </div>
+                                        </div>
+                                        <div class="row mb-0">
+                                            <div class="col-6">
+                                                <p class="text-dark pb-0 mb-0">Anxiety Disorder</p>
+                                            </div>
+                                            <div class="col-6">
+                                                <input type="checkbox" disabled="disabled" id="short-family-anxiety" />
+                                            </div>
+                                        </div>
+                                        <div class="row mb-0">
+                                            <div class="col-6">
+                                                <p class="text-dark pb-0 mb-0">Athritis</p>
+                                            </div>
+                                            <div class="col-6">
+                                                <input type="checkbox" disabled="disabled" id="short-family-athritis" />
+                                            </div>
+                                        </div>
+                                        <div class="row mb-0">
+                                            <div class="col-6">
+                                                <p class="text-dark pb-0 mb-0">Bladder Problems</p>
+                                            </div>
+                                            <div class="col-6">
+                                                <input type="checkbox" disabled="disabled"
+                                                    id="short-family-bladder-problems" />
+                                            </div>
+                                        </div>
+                                        <div class="row mb-0">
+                                            <div class="col-6">
+                                                <p class="text-dark pb-0 mb-0">Bleeding Disease</p>
+                                            </div>
+                                            <div class="col-6">
+                                                <input type="checkbox" disabled="disabled"
+                                                    id="short-family-bladder-disease" />
+                                            </div>
+                                        </div>
+                                        <div class="row mb-0">
+                                            <div class="col-6">
+                                                <p class="text-dark pb-0 mb-0">Cancer</p>
+                                            </div>
+                                            <div class="col-6">
+                                                <input type="checkbox" disabled="disabled" id="short-family-cancer" />
+                                            </div>
+                                        </div>
+                                        <div class="row mb-0">
+                                            <div class="col-6">
+                                                <p class="text-dark pb-0 mb-0">Depression</p>
+                                            </div>
+                                            <div class="col-6">
+                                                <input type="checkbox" disabled="disabled"
+                                                    id="short-family-depression" />
+                                            </div>
+                                        </div>
+                                        <div class="row mb-0">
+                                            <div class="col-6">
+                                                <p class="text-dark pb-0 mb-0">Diabetes</p>
+                                            </div>
+                                            <div class="col-6">
+                                                <input type="checkbox" disabled="disabled" id="short-family-diabetes" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="row mb-0">
+                                            <div class="col-6">
+                                                <p class="text-dark pb-0 mb-0">Heart Disease</p>
+                                            </div>
+                                            <div class="col-6">
+                                                <input type="checkbox" disabled="disabled"
+                                                    id="short-family-heart-disease" />
+                                            </div>
+                                        </div>
+                                        <div class="row mb-0">
+                                            <div class="col-6">
+                                                <p class="text-dark pb-0 mb-0">High Blood Pressure</p>
+                                            </div>
+                                            <div class="col-6">
+                                                <input type="checkbox" disabled="disabled"
+                                                    id="short-family-blood-pressue" />
+                                            </div>
+                                        </div>
+                                        <div class="row mb-0">
+                                            <div class="col-6">
+                                                <p class="text-dark pb-0 mb-0">High Cholesterol</p>
+                                            </div>
+                                            <div class="col-6">
+                                                <input type="checkbox" disabled="disabled"
+                                                    id="short-family-cholesterol" />
+                                            </div>
+                                        </div>
+                                        <div class="row mb-0">
+                                            <div class="col-6">
+                                                <p class="text-dark pb-0 mb-0">Kidney Disease</p>
+                                            </div>
+                                            <div class="col-6">
+                                                <input type="checkbox" disabled="disabled"
+                                                    id="short-family-kidney-disease" />
+                                            </div>
+                                        </div>
+                                        <div class="row mb-0">
+                                            <div class="col-6">
+                                                <p class="text-dark pb-0 mb-0">Leukemia</p>
+                                            </div>
+                                            <div class="col-6">
+                                                <input type="checkbox" disabled="disabled" id="short-family-leukemia" />
+                                            </div>
+                                        </div>
+                                        <div class="row mb-0">
+                                            <div class="col-6">
+                                                <p class="text-dark pb-0 mb-0">Lung/ Respiratory Disease</p>
+                                            </div>
+                                            <div class="col-6">
+                                                <input type="checkbox" disabled="disabled"
+                                                    id="short-family-respiratory-disease" />
+                                            </div>
+                                        </div>
+                                        <div class="row mb-0">
+                                            <div class="col-6">
+                                                <p class="text-dark pb-0 mb-0">Migraine</p>
+                                            </div>
+                                            <div class="col-6">
+                                                <input type="checkbox" disabled="disabled" id="short-family-migraine" />
+                                            </div>
+                                        </div>
+                                        <div class="row mb-0">
+                                            <div class="col-6">
+                                                <p class="text-dark pb-0 mb-0">Osteoporosis</p>
+                                            </div>
+                                            <div class="col-6">
+                                                <input type="checkbox" disabled="disabled"
+                                                    id="short-family-osteoporosis" />
+                                            </div>
+                                        </div>
+                                        <div class="row mb-0">
+                                            <div class="col-6">
+                                                <p class="text-dark pb-0 mb-0">Seizures / Convulsion</p>
+                                            </div>
+                                            <div class="col-6">
+                                                <input type="checkbox" disabled="disabled" id="short-family-seizures" />
+                                            </div>
+                                        </div>
+                                        <div class="row mb-0">
+                                            <div class="col-6">
+                                                <p class="text-dark pb-0 mb-0">Severe Allergy</p>
+                                            </div>
+                                            <div class="col-6">
+                                                <input type="checkbox" disabled="disabled" id="short-family-allergy" />
+                                            </div>
+                                        </div>
+                                        <div class="row mb-0">
+                                            <div class="col-6">
+                                                <p class="text-dark pb-0 mb-0">Stroke</p>
+                                            </div>
+                                            <div class="col-6">
+                                                <input type="checkbox" disabled="disabled" id="short-family-stroke" />
+                                            </div>
+                                        </div>
+                                        <div class="row mb-0">
+                                            <div class="col-6">
+                                                <p class="text-dark pb-0 mb-0">Thyroid Problems</p>
+                                            </div>
+                                            <div class="col-6">
+                                                <input type="checkbox" disabled="disabled" id="short-family-thyroid" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <h3 class="pt-3">Other Information</h3>
+                                <hr />
+
+                                <h6>Letter of Intent</h6>
+                                <p class="font-15 mb-3" id="short-intent"></p>
+
+                                <p class="font-15 p-0 m-0">Where did you find our hiring?:</p>
+                                <h6 id="short-find" class="mb-2"></h6>
+
+                                <p class="font-15 p-0 m-0">Invited by</p>
+                                <h6 id="short-invited" class="mb-2"></h6>
+
+                                <div class="responsive-iframe mt-5" id="short-map">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Page content ends here-->
+
+            <!-- Main Menu-->
+            <div id="menu-main" class="menu menu-box-left rounded-0" data-menu-load="menu-main.html"
+                data-menu-width="280" data-menu-active="nav-pages"></div>
+
+            <!-- Share Menu-->
+            <div id="menu-share" class="menu menu-box-bottom rounded-m" data-menu-load="menu-share.html"
+                data-menu-height="370"></div>
+
+            <!-- Colors Menu-->
+            <div id="menu-colors" class="menu menu-box-bottom rounded-m" data-menu-load="menu-colors.html"
+                data-menu-height="480"></div>
+
+
+        </div>
+        <script type="text/javascript" src="scripts/jquery.js"></script>
+        <script type="text/javascript" src="scripts/bootstrap.min.js"></script>
+        <script type="module" src="scripts/custom.js"></script>
+</body>
