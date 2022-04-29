@@ -20,7 +20,7 @@ function setupParams() {
 
 async function getStoreLists() {
   try {
-    const response = await get(`${get_stores_url}/${_company}`);
+    const response = await get(`${get_stores_url}/${_company}}`);
     if (response.status === 200) {
       await setupDropdown(response.data);
     }
@@ -157,9 +157,12 @@ function shortPersonal(d, p) {
     blood: d.person_bloodtype,
   };
   $.each(attr, function (k, v) {
-    $("#short-" + v).html(
-      attrData[v].charAt(0).toUpperCase() + attrData[v].slice(1)
-    );
+    if(attrData[v] !== undefined) {
+      $("#short-" + v).html(
+        attrData[v].charAt(0).toUpperCase() + attrData[v].slice(1)
+      );
+    }
+
   });
 }
 
@@ -183,9 +186,11 @@ function shortId(d, p) {
     "emerg-relationship": d.person_emergency_relationship,
   };
   $.each(attr, function (k, v) {
-    $("#short-" + v).html(
-      attrData[v].charAt(0).toUpperCase() + attrData[v].slice(1)
-    );
+    if(attrData[v] !== undefined) {
+      $("#short-" + v).html(
+        attrData[v].charAt(0).toUpperCase() + attrData[v].slice(1)
+      );
+    }
   });
 }
 
@@ -200,7 +205,8 @@ function shortEducation(d, p) {
     "hs-award": d.educ_hs_mentions,
     "hs-year": d.educ_hs_year,
   };
-  if (d.educ_college_graduated.toLowerCase() === "yes") {
+ 
+  if (d.educ_college_graduated !== "" && d.educ_college_graduated.toLowerCase() === "yes") {
     $("#short-college-container").fadeIn();
     attr.push(
       "college",
@@ -209,11 +215,27 @@ function shortEducation(d, p) {
       "college-course",
       "college-complete"
     );
+    
     attrData["college"] = d.educ_college;
     attrData["college-awards"] = d.educ_cl_mentions;
     attrData["college-status"] = d.educ_college_graduated;
     attrData["college-course"] = d.educ_college_course;
     attrData["college-complete"] = d.educ_college_year;
+  } else {
+    $("#short-college-container").fadeIn();
+    attr.push(
+      "college",
+      "college-awards",
+      "college-status",
+      "college-course",
+      "college-complete"
+    );
+    
+    attrData["college"] = "N/A";
+    attrData["college-awards"] = "N/A";
+    attrData["college-status"] = "NO";
+    attrData["college-course"] = "N/A";
+    attrData["college-complete"] = "N/A"; 
   }
 
   if (d.vocational_chkbox !== undefined) {
@@ -225,9 +247,11 @@ function shortEducation(d, p) {
     attrData["voc-status"] = d.vocational_chkbox;
   }
   $.each(attr, function (k, v) {
-    $("#short-" + v).html(
-      attrData[v].charAt(0).toUpperCase() + attrData[v].slice(1)
-    );
+    if(attrData[v] !== undefined) {
+      $("#short-" + v).html(
+        attrData[v].charAt(0).toUpperCase() + attrData[v].slice(1)
+      );
+    }
   });
 }
 
@@ -246,23 +270,26 @@ function shortFamily(d, p) {
     "spouse-age",
     "spouse-child",
   ];
-  
+  const getAge = birthDate => Math.floor((new Date() - new Date(birthDate).getTime()) / 3.15576e+10)
+  let f_age = getAge(d.person_father_bdate).toString();
+  let mother_age = getAge(d.person_mother_bdate).toString();
   let attrData = {
-    father: d.person_father,
-    "father-age": d.person_father_age,
+    "father": d.person_father,
+    "father-age": f_age,
     "father-dob": d.person_father_bdate,
     "father-occ": d.person_father_occ,
-    mother: d.person_mother,
-    "mother-age": d.person_mother_age,
+    "mother": d.person_mother,
+    "mother-age": mother_age,
     "mother-dob": d.person_mother_bdate,
     "mother-occ": d.person_mother_occ,
-    spouse: d.person_spouse_name,
+    "spouse": d.person_spouse_name,
     "spouse-occ": d.person_spouse_occ,
     "spouse-age": d.person_spouse_age,
     "spouse-child": d.person_spouse_child,
   };
   
-  if (d.haveSiblings_chkbox !== undefined && d.haveSiblings_chkbox.toLowerCase() === "on") {
+  
+  if (d.with_sibling == "true" || d.haveSiblings_chkbox !== undefined && d.haveSiblings_chkbox.toLowerCase() === "on") {
     $("#short-siblings-container").fadeIn();
     $.each(d.person_sibling, function (i, e) {
       $("#short-siblings-body").append(
@@ -278,10 +305,11 @@ function shortFamily(d, p) {
   }
 
   $.each(attr, function (k, v) {
-    
-    $("#short-" + v).html(
-      attrData[v].charAt(0).toUpperCase() + attrData[v].slice(1)
-    );
+    if(attrData[v] !== undefined) {
+      $("#short-" + v).html(
+        attrData[v].charAt(0).toUpperCase() + attrData[v].slice(1)
+      );
+    }
   });
 }
 
@@ -332,9 +360,11 @@ function shortWork(d, p) {
   }
 
   $.each(attr, function (k, v) {
-    $("#short-" + v).html(
-      attrData[v].charAt(0).toUpperCase() + attrData[v].slice(1)
-    );
+    if(attrData[v] !== undefined) {
+      $("#short-" + v).html(
+        attrData[v].charAt(0).toUpperCase() + attrData[v].slice(1)
+      );
+    }
   });
 }
 
@@ -359,9 +389,12 @@ function shortTraining(d, p) {
   };
 
   $.each(attr, function (k, v) {
-    $("#short-" + v).html(
-      attrData[v].charAt(0).toUpperCase() + attrData[v].slice(1)
-    );
+    if(attrData[v] !== undefined) {
+      $("#short-" + v).html(
+        attrData[v].charAt(0).toUpperCase() + attrData[v].slice(1)
+      );
+    }
+
   });
 }
 
