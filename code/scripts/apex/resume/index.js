@@ -246,6 +246,7 @@ function shortFamily(d, p) {
     "spouse-age",
     "spouse-child",
   ];
+  
   let attrData = {
     father: d.person_father,
     "father-age": d.person_father_age,
@@ -260,8 +261,8 @@ function shortFamily(d, p) {
     "spouse-age": d.person_spouse_age,
     "spouse-child": d.person_spouse_child,
   };
-
-  if (d.haveSiblings_chkbox.toLowerCase() === "on") {
+  
+  if (d.haveSiblings_chkbox !== undefined && d.haveSiblings_chkbox.toLowerCase() === "on") {
     $("#short-siblings-container").fadeIn();
     $.each(d.person_sibling, function (i, e) {
       $("#short-siblings-body").append(
@@ -277,6 +278,7 @@ function shortFamily(d, p) {
   }
 
   $.each(attr, function (k, v) {
+    
     $("#short-" + v).html(
       attrData[v].charAt(0).toUpperCase() + attrData[v].slice(1)
     );
