@@ -20,8 +20,8 @@ export const post_applicant_store_eval_url =
 export function getAppUrl() {
   const hostname = window.location.hostname;
   // const devUrl = "http://staging.api.sparkles.com.ph";
-  const devUrl = "http://localhost/webservice-hr-api";
-  const prodUrl = "https://api.sparkles.com.ph";
+  //const devUrl = "http://localhost:8080/webservice-hr-api";
+  const devUrl = "https://api.starjobs.com.ph/webservice-hr-api";
 
   if (hostname === "127.0.0.1" || hostname === "localhost") {
     return devUrl;
