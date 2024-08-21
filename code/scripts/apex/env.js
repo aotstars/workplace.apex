@@ -22,6 +22,7 @@ export function getAppUrl() {
   // const devUrl = "http://staging.api.sparkles.com.ph";
   //const devUrl = "http://localhost:8080/webservice-hr-api";
   const devUrl = "https://api.starjobs.com.ph/webservice-hr-api";
+  const prodUrl = "https://api.starjobs.com.ph/webservice-hr-api";
 
   if (hostname === "127.0.0.1" || hostname === "localhost") {
     return devUrl;
